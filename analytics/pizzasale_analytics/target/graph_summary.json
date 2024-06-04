@@ -1,0 +1,1 @@
+{"_invocation_id": "79da83e5-e7f2-43cd-8fec-2cd48d5f482d", "linked": {"0": {"name": "source.pizzasale_analytics.staging.pizzasales", "type": "source", "succ": [1]}, "1": {"name": "model.pizzasale_analytics.stg_pizzasales", "type": "model"}}}

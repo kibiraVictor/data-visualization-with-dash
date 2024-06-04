@@ -1,0 +1,2851 @@
+[0m10:41:56.769057 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cde31b51290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cde33c39a90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cde31b076d0>]}
+
+
+============================== 10:41:56.771892 | f9ff53eb-3bd7-4bee-bdc4-95de496b83d1 ==============================
+[0m10:41:56.771892 [info ] [MainThread]: Running with dbt=1.8.1
+[0m10:41:56.772829 [debug] [MainThread]: running dbt with arguments {'introspect': 'True', 'profiles_dir': '/home/ahona/.dbt', 'use_experimental_parser': 'False', 'send_anonymous_usage_stats': 'True', 'no_print': 'None', 'warn_error': 'None', 'indirect_selection': 'eager', 'log_format': 'default', 'target_path': 'None', 'cache_selected_only': 'False', 'debug': 'False', 'use_colors': 'True', 'static_parser': 'True', 'fail_fast': 'False', 'version_check': 'True', 'write_json': 'True', 'printer_width': '80', 'log_cache_events': 'False', 'partial_parse': 'True', 'log_path': '/home/ahona/Desktop/dataEng/analytics/pizzasale_analytics/logs', 'quiet': 'False', 'invocation_command': 'dbt debug', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])'}
+[0m10:41:56.783158 [info ] [MainThread]: dbt version: 1.8.1
+[0m10:41:56.784178 [info ] [MainThread]: python version: 3.11.7
+[0m10:41:56.785048 [info ] [MainThread]: python path: /home/ahona/anaconda3/bin/python
+[0m10:41:56.786365 [info ] [MainThread]: os info: Linux-6.8.0-31-generic-x86_64-with-glibc2.39
+[0m10:41:56.847903 [info ] [MainThread]: Using profiles dir at /home/ahona/.dbt
+[0m10:41:56.848551 [info ] [MainThread]: Using profiles.yml file at /home/ahona/.dbt/profiles.yml
+[0m10:41:56.849149 [info ] [MainThread]: Using dbt_project.yml file at /home/ahona/Desktop/dataEng/analytics/pizzasale_analytics/dbt_project.yml
+[0m10:41:56.849774 [info ] [MainThread]: adapter type: postgres
+[0m10:41:56.850247 [info ] [MainThread]: adapter version: 1.8.1
+[0m10:41:56.952346 [info ] [MainThread]: Configuration:
+[0m10:41:56.953004 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m10:41:56.953485 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m10:41:56.953933 [info ] [MainThread]: Required dependencies:
+[0m10:41:56.954428 [debug] [MainThread]: Executing "git --help"
+[0m10:41:56.957195 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m10:41:56.957839 [debug] [MainThread]: STDERR: "b''"
+[0m10:41:56.958299 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m10:41:56.958812 [info ] [MainThread]: Connection:
+[0m10:41:56.959334 [info ] [MainThread]:   host: localhost
+[0m10:41:56.959844 [info ] [MainThread]:   port: 5432
+[0m10:41:56.960303 [info ] [MainThread]:   user: root
+[0m10:41:56.960736 [info ] [MainThread]:   database: pizza_sales
+[0m10:41:56.961191 [info ] [MainThread]:   schema: public
+[0m10:41:56.961624 [info ] [MainThread]:   connect_timeout: 10
+[0m10:41:56.962182 [info ] [MainThread]:   role: None
+[0m10:41:56.962647 [info ] [MainThread]:   search_path: None
+[0m10:41:56.963185 [info ] [MainThread]:   keepalives_idle: 0
+[0m10:41:56.963627 [info ] [MainThread]:   sslmode: None
+[0m10:41:56.964152 [info ] [MainThread]:   sslcert: None
+[0m10:41:56.964587 [info ] [MainThread]:   sslkey: None
+[0m10:41:56.965129 [info ] [MainThread]:   sslrootcert: None
+[0m10:41:56.965570 [info ] [MainThread]:   application_name: dbt
+[0m10:41:56.966123 [info ] [MainThread]:   retries: 1
+[0m10:41:56.966689 [info ] [MainThread]: Registered adapter: postgres=1.8.1
+[0m10:41:56.968456 [debug] [MainThread]: Acquiring new postgres connection 'debug'
+[0m10:41:56.999448 [debug] [MainThread]: Using postgres connection "debug"
+[0m10:41:57.000024 [debug] [MainThread]: On debug: select 1 as id
+[0m10:41:57.000485 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m10:41:57.006068 [debug] [MainThread]: SQL status: SELECT 1 in 0.0 seconds
+[0m10:41:57.007412 [debug] [MainThread]: On debug: Close
+[0m10:41:57.008048 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m10:41:57.008830 [info ] [MainThread]: [32mAll checks passed![0m
+[0m10:41:57.010025 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 0.34143507, "process_user_time": 1.651926, "process_kernel_time": 0.157993, "process_mem_max_rss": "102736", "process_out_blocks": "16", "process_in_blocks": "0"}
+[0m10:41:57.011213 [debug] [MainThread]: Command `dbt debug` succeeded at 10:41:57.010974 after 0.34 seconds
+[0m10:41:57.011747 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m10:41:57.012288 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cde31b69650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cde31b69710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cde319f48d0>]}
+[0m10:41:57.012823 [debug] [MainThread]: Flushing usage events
+[0m11:22:42.331624 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72e50e34fdd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72e50e34fbd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72e50e34ded0>]}
+
+
+============================== 11:22:42.333815 | 293abb97-f5e9-4de7-b915-f557becb646e ==============================
+[0m11:22:42.333815 [info ] [MainThread]: Running with dbt=1.8.1
+[0m11:22:42.334564 [debug] [MainThread]: running dbt with arguments {'cache_selected_only': 'False', 'target_path': 'None', 'log_format': 'default', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'profiles_dir': '/home/ahona/.dbt', 'quiet': 'False', 'send_anonymous_usage_stats': 'True', 'invocation_command': 'dbt deps', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'warn_error': 'None', 'log_cache_events': 'False', 'version_check': 'True', 'debug': 'False', 'no_print': 'None', 'use_colors': 'True', 'static_parser': 'True', 'log_path': '/home/ahona/Desktop/dataEng/analytics/pizzasale_analytics/logs', 'partial_parse': 'True', 'introspect': 'True', 'write_json': 'True', 'fail_fast': 'False', 'printer_width': '80'}
+[0m11:22:42.424897 [error] [MainThread]: Encountered an error:
+Runtime Error
+  The packages.yml file in this project is malformed. Please double check
+  the contents of this file and fix any errors before retrying.
+  
+  You can find more information on the syntax for this file here:
+  https://docs.getdbt.com/docs/package-management
+  
+  Validator Error:
+  Additional properties are not allowed ('version' was unexpected)
+  
+
+Error encountered in /home/ahona/Desktop/dataEng/analytics/pizzasale_analytics/dbt_project.yml
+[0m11:22:42.426185 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_wall_clock_time": 0.17412494, "process_user_time": 1.303456, "process_kernel_time": 0.103956, "process_mem_max_rss": "95420", "process_out_blocks": "16", "command_success": false, "process_in_blocks": "0"}
+[0m11:22:42.426778 [debug] [MainThread]: Command `dbt deps` failed at 11:22:42.426665 after 0.17 seconds
+[0m11:22:42.427290 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72e50e3a8890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72e50e3cf110>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72e5125f5210>]}
+[0m11:22:42.427762 [debug] [MainThread]: Flushing usage events
+[0m11:23:58.912534 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x753b0f017010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x753b0f062250>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x753b0f52b1d0>]}
+
+
+============================== 11:23:58.914428 | b9ebaf37-d1c3-4d3b-82b9-0b7c1bb5955f ==============================
+[0m11:23:58.914428 [info ] [MainThread]: Running with dbt=1.8.1
+[0m11:23:58.915126 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'profiles_dir': '/home/ahona/.dbt', 'use_experimental_parser': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'no_print': 'None', 'log_path': '/home/ahona/Desktop/dataEng/analytics/pizzasale_analytics/logs', 'cache_selected_only': 'False', 'target_path': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'printer_width': '80', 'warn_error': 'None', 'log_format': 'default', 'quiet': 'False', 'fail_fast': 'False', 'invocation_command': 'dbt deps', 'write_json': 'True', 'indirect_selection': 'eager', 'version_check': 'True', 'log_cache_events': 'False', 'introspect': 'True', 'debug': 'False', 'send_anonymous_usage_stats': 'True'}
+[0m11:23:59.139257 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'b9ebaf37-d1c3-4d3b-82b9-0b7c1bb5955f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x753b0f07de10>]}
+[0m11:23:59.153423 [debug] [MainThread]: Set downloads directory='/tmp/dbt-downloads-_9sruhyf'
+[0m11:23:59.154290 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m11:24:00.786275 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m11:24:00.792497 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m11:24:01.607697 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m11:24:01.630969 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/codegen.json
+[0m11:24:02.548720 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/codegen.json 200
+[0m11:24:02.580032 [info ] [MainThread]: Updating lock file in file path: /home/ahona/Desktop/dataEng/analytics/pizzasale_analytics/package-lock.yml
+[0m11:24:02.583125 [debug] [MainThread]: Set downloads directory='/tmp/dbt-downloads-argh94xk'
+[0m11:24:02.589333 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m11:24:05.482894 [info ] [MainThread]: Installed from version 1.1.1
+[0m11:24:05.483488 [info ] [MainThread]: Up to date!
+[0m11:24:05.484049 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': 'b9ebaf37-d1c3-4d3b-82b9-0b7c1bb5955f', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x753b0f070d50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x753b104f9990>]}
+[0m11:24:05.484508 [info ] [MainThread]: Installing dbt-labs/codegen
+[0m11:24:07.298523 [info ] [MainThread]: Installed from version 0.12.1
+[0m11:24:07.299349 [info ] [MainThread]: Up to date!
+[0m11:24:07.300337 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': 'b9ebaf37-d1c3-4d3b-82b9-0b7c1bb5955f', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x753b104f9990>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x753b0f016110>]}
+[0m11:24:07.302254 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_success": true, "command_wall_clock_time": 8.495098, "process_user_time": 2.069042, "process_kernel_time": 0.199137, "process_mem_max_rss": "97984", "process_in_blocks": "13848", "process_out_blocks": "2688"}
+[0m11:24:07.303570 [debug] [MainThread]: Command `dbt deps` succeeded at 11:24:07.303408 after 8.50 seconds
+[0m11:24:07.304190 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x753b13172d90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x753b132f4650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x753b132f55d0>]}
+[0m11:24:07.304795 [debug] [MainThread]: Flushing usage events
+[0m11:24:31.118275 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x785cfd9d7d90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x785cfda26f10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x785cfd9d7fd0>]}
+
+
+============================== 11:24:31.120399 | 09f64efa-6858-4de4-aeb6-4a6da3e7a2d1 ==============================
+[0m11:24:31.120399 [info ] [MainThread]: Running with dbt=1.8.1
+[0m11:24:31.121197 [debug] [MainThread]: running dbt with arguments {'debug': 'False', 'log_cache_events': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'log_path': '/home/ahona/Desktop/dataEng/analytics/pizzasale_analytics/logs', 'partial_parse': 'True', 'introspect': 'True', 'fail_fast': 'False', 'cache_selected_only': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'profiles_dir': '/home/ahona/.dbt', 'printer_width': '80', 'quiet': 'False', 'invocation_command': 'dbt run', 'send_anonymous_usage_stats': 'True', 'log_format': 'default', 'indirect_selection': 'eager', 'warn_error': 'None', 'target_path': 'None', 'static_parser': 'True', 'version_check': 'True', 'write_json': 'True'}
+[0m11:24:31.290986 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '09f64efa-6858-4de4-aeb6-4a6da3e7a2d1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x785cfda4dfd0>]}
+[0m11:24:31.344969 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '09f64efa-6858-4de4-aeb6-4a6da3e7a2d1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x785cfe051f10>]}
+[0m11:24:31.345867 [info ] [MainThread]: Registered adapter: postgres=1.8.1
+[0m11:24:31.384423 [debug] [MainThread]: checksum: ebc509fb14e151ea268e89b60fd5abf912ed99129f87516462718fa2f14f4838, vars: {}, profile: , target: , version: 1.8.1
+[0m11:24:31.385376 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m11:24:31.386140 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '09f64efa-6858-4de4-aeb6-4a6da3e7a2d1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x785cfd6d2d90>]}
+[0m11:24:32.891505 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.pizzasale_analytics.example
+[0m11:24:32.904021 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '09f64efa-6858-4de4-aeb6-4a6da3e7a2d1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x785cfd2cd9d0>]}
+[0m11:24:32.999679 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '09f64efa-6858-4de4-aeb6-4a6da3e7a2d1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x785cfd5eba90>]}
+[0m11:24:33.000277 [info ] [MainThread]: Found 1 model, 1 source, 550 macros
+[0m11:24:33.000766 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '09f64efa-6858-4de4-aeb6-4a6da3e7a2d1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x785cfd35f810>]}
+[0m11:24:33.002267 [info ] [MainThread]: 
+[0m11:24:33.003099 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m11:24:33.004154 [debug] [ThreadPool]: Acquiring new postgres connection 'list_pizza_sales'
+[0m11:24:33.044882 [debug] [ThreadPool]: Using postgres connection "list_pizza_sales"
+[0m11:24:33.045461 [debug] [ThreadPool]: On list_pizza_sales: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "pizza_analytics", "target_name": "dev", "connection_name": "list_pizza_sales"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m11:24:33.045957 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:24:33.051428 [debug] [ThreadPool]: SQL status: SELECT 4 in 0.0 seconds
+[0m11:24:33.053183 [debug] [ThreadPool]: On list_pizza_sales: Close
+[0m11:24:33.054721 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_pizza_sales, now list_pizza_sales_public)
+[0m11:24:33.061547 [debug] [ThreadPool]: Using postgres connection "list_pizza_sales_public"
+[0m11:24:33.062088 [debug] [ThreadPool]: On list_pizza_sales_public: BEGIN
+[0m11:24:33.062511 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m11:24:33.066891 [debug] [ThreadPool]: SQL status: BEGIN in 0.0 seconds
+[0m11:24:33.067475 [debug] [ThreadPool]: Using postgres connection "list_pizza_sales_public"
+[0m11:24:33.067941 [debug] [ThreadPool]: On list_pizza_sales_public: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "pizza_analytics", "target_name": "dev", "connection_name": "list_pizza_sales_public"} */
+select
+      'pizza_sales' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'pizza_sales' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+    union all
+    select
+      'pizza_sales' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public'
+  
+[0m11:24:33.072084 [debug] [ThreadPool]: SQL status: SELECT 1 in 0.0 seconds
+[0m11:24:33.073641 [debug] [ThreadPool]: On list_pizza_sales_public: ROLLBACK
+[0m11:24:33.074379 [debug] [ThreadPool]: On list_pizza_sales_public: Close
+[0m11:24:33.080888 [debug] [MainThread]: Using postgres connection "master"
+[0m11:24:33.081424 [debug] [MainThread]: On master: BEGIN
+[0m11:24:33.081847 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:24:33.086567 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m11:24:33.087126 [debug] [MainThread]: Using postgres connection "master"
+[0m11:24:33.087665 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "pizza_analytics", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m11:24:33.095279 [debug] [MainThread]: SQL status: SELECT 0 in 0.0 seconds
+[0m11:24:33.096643 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '09f64efa-6858-4de4-aeb6-4a6da3e7a2d1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x785cfd479810>]}
+[0m11:24:33.097223 [debug] [MainThread]: On master: ROLLBACK
+[0m11:24:33.097961 [debug] [MainThread]: Using postgres connection "master"
+[0m11:24:33.098442 [debug] [MainThread]: On master: BEGIN
+[0m11:24:33.099331 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m11:24:33.099804 [debug] [MainThread]: On master: COMMIT
+[0m11:24:33.100244 [debug] [MainThread]: Using postgres connection "master"
+[0m11:24:33.100648 [debug] [MainThread]: On master: COMMIT
+[0m11:24:33.101226 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m11:24:33.101673 [debug] [MainThread]: On master: Close
+[0m11:24:33.102336 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m11:24:33.103028 [info ] [MainThread]: 
+[0m11:24:33.107041 [debug] [Thread-1 (]: Began running node model.pizzasale_analytics.stg_pizzasales
+[0m11:24:33.107789 [info ] [Thread-1 (]: 1 of 1 START sql view model public.stg_pizzasales .............................. [RUN]
+[0m11:24:33.108447 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_pizza_sales_public, now model.pizzasale_analytics.stg_pizzasales)
+[0m11:24:33.108951 [debug] [Thread-1 (]: Began compiling node model.pizzasale_analytics.stg_pizzasales
+[0m11:24:33.120749 [debug] [Thread-1 (]: Writing injected SQL for node "model.pizzasale_analytics.stg_pizzasales"
+[0m11:24:33.122896 [debug] [Thread-1 (]: Began executing node model.pizzasale_analytics.stg_pizzasales
+[0m11:24:33.165318 [debug] [Thread-1 (]: Writing runtime sql for node "model.pizzasale_analytics.stg_pizzasales"
+[0m11:24:33.166230 [debug] [Thread-1 (]: Using postgres connection "model.pizzasale_analytics.stg_pizzasales"
+[0m11:24:33.166707 [debug] [Thread-1 (]: On model.pizzasale_analytics.stg_pizzasales: BEGIN
+[0m11:24:33.167157 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m11:24:33.171322 [debug] [Thread-1 (]: SQL status: BEGIN in 0.0 seconds
+[0m11:24:33.171870 [debug] [Thread-1 (]: Using postgres connection "model.pizzasale_analytics.stg_pizzasales"
+[0m11:24:33.172414 [debug] [Thread-1 (]: On model.pizzasale_analytics.stg_pizzasales: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "pizza_analytics", "target_name": "dev", "node_id": "model.pizzasale_analytics.stg_pizzasales"} */
+
+  create view "pizza_sales"."public"."stg_pizzasales__dbt_tmp"
+    
+    
+  as (
+    -- the idea is to have a source of our data
+-- thus i am going to select everything from table in postgres
+-- i will use this as a source for the other models
+
+
+
+-- create a cte for selecting all the data from the table in the db
+
+with stg_pizza_sales as (
+    select
+        -- first i create a surrogate key that is going to uniquely identify my records
+        md5(cast(coalesce(cast(pizza_id as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) as pizzaid,
+
+        -- gonna work on identifiers first, ensuring they are correctly casted
+        -- we have pizza_id, order_id
+
+        
+    
+    cast(pizza_id as integer)
+ as pizza_id,
+        
+    
+    cast(order_id as integer)
+ as order_id,
+
+        -- working on the other attributes
+        pizza_name_id as pizza_name_id,
+        
+    
+    cast(quantity as integer)
+ as quantity,
+        cast(order_date as timestamp) as order_date,
+        cast(order_time as timestamp) as order_time,
+        cast(unit_price as numeric) as unit_price,
+        cast(total_price as numeric) as total_price,
+        pizza_size,
+        case 
+        when  = 'S' then 'small'
+        when  = 'XXL' then 'Extra extra Large'
+        when  = 'XL' then 'Extra large'
+        when  = 'M' then 'Medium'
+        when  = 'L' then 'Large'
+        else 'EMPTY'
+    end as pizza_size_description,
+        pizza_category,
+        pizza_ingredients,
+        pizza_name
+    from "pizza_sales"."public"."pizzasales"
+)
+
+select
+    *
+from stg_pizza_sales
+  );
+[0m11:24:33.173403 [debug] [Thread-1 (]: Postgres adapter: Postgres error: syntax error at or near "="
+LINE 44:         when  = 'S' then 'small'
+                       ^
+
+[0m11:24:33.173909 [debug] [Thread-1 (]: On model.pizzasale_analytics.stg_pizzasales: ROLLBACK
+[0m11:24:33.174935 [debug] [Thread-1 (]: On model.pizzasale_analytics.stg_pizzasales: Close
+[0m11:24:33.181287 [debug] [Thread-1 (]: Database Error in model stg_pizzasales (models/staging/stg_pizzasales.sql)
+  syntax error at or near "="
+  LINE 44:         when  = 'S' then 'small'
+                         ^
+  compiled Code at target/run/pizzasale_analytics/models/staging/stg_pizzasales.sql
+[0m11:24:33.182833 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '09f64efa-6858-4de4-aeb6-4a6da3e7a2d1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x785cfd10e990>]}
+[0m11:24:33.183602 [error] [Thread-1 (]: 1 of 1 ERROR creating sql view model public.stg_pizzasales ..................... [[31mERROR[0m in 0.07s]
+[0m11:24:33.184387 [debug] [Thread-1 (]: Finished running node model.pizzasale_analytics.stg_pizzasales
+[0m11:24:33.185921 [debug] [MainThread]: Using postgres connection "master"
+[0m11:24:33.186450 [debug] [MainThread]: On master: BEGIN
+[0m11:24:33.186855 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m11:24:33.191309 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m11:24:33.191845 [debug] [MainThread]: On master: COMMIT
+[0m11:24:33.192280 [debug] [MainThread]: Using postgres connection "master"
+[0m11:24:33.192690 [debug] [MainThread]: On master: COMMIT
+[0m11:24:33.193398 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m11:24:33.194184 [debug] [MainThread]: On master: Close
+[0m11:24:33.195176 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:24:33.195984 [debug] [MainThread]: Connection 'model.pizzasale_analytics.stg_pizzasales' was properly closed.
+[0m11:24:33.196854 [info ] [MainThread]: 
+[0m11:24:33.198920 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 0.19 seconds (0.19s).
+[0m11:24:33.202166 [debug] [MainThread]: Command end result
+[0m11:24:33.239336 [info ] [MainThread]: 
+[0m11:24:33.240044 [info ] [MainThread]: [31mCompleted with 1 error and 0 warnings:[0m
+[0m11:24:33.240541 [info ] [MainThread]: 
+[0m11:24:33.241207 [error] [MainThread]:   Database Error in model stg_pizzasales (models/staging/stg_pizzasales.sql)
+  syntax error at or near "="
+  LINE 44:         when  = 'S' then 'small'
+                         ^
+  compiled Code at target/run/pizzasale_analytics/models/staging/stg_pizzasales.sql
+[0m11:24:33.241784 [info ] [MainThread]: 
+[0m11:24:33.242385 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[0m11:24:33.243541 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 2.2053468, "process_user_time": 3.234015, "process_kernel_time": 0.171788, "process_mem_max_rss": "112228", "process_in_blocks": "2408", "process_out_blocks": "3384", "command_success": false}
+[0m11:24:33.244318 [debug] [MainThread]: Command `dbt run` failed at 11:24:33.244162 after 2.21 seconds
+[0m11:24:33.245225 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x785d01cf4550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x785d01cf4510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x785d01cf5110>]}
+[0m11:24:33.245700 [debug] [MainThread]: Flushing usage events
+[0m11:25:27.820569 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c985a777490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c985a777910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c985a775210>]}
+
+
+============================== 11:25:27.822712 | e1715a22-5cb5-4ac5-9e26-cc40d749f2f0 ==============================
+[0m11:25:27.822712 [info ] [MainThread]: Running with dbt=1.8.1
+[0m11:25:27.823539 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'use_experimental_parser': 'False', 'partial_parse': 'True', 'invocation_command': 'dbt run', 'debug': 'False', 'log_format': 'default', 'use_colors': 'True', 'fail_fast': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'target_path': 'None', 'quiet': 'False', 'warn_error': 'None', 'printer_width': '80', 'log_path': '/home/ahona/Desktop/dataEng/analytics/pizzasale_analytics/logs', 'send_anonymous_usage_stats': 'True', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'introspect': 'True', 'profiles_dir': '/home/ahona/.dbt', 'cache_selected_only': 'False'}
+[0m11:25:27.996763 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'e1715a22-5cb5-4ac5-9e26-cc40d749f2f0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c985a7da650>]}
+[0m11:25:28.050151 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'e1715a22-5cb5-4ac5-9e26-cc40d749f2f0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c985c917790>]}
+[0m11:25:28.050957 [info ] [MainThread]: Registered adapter: postgres=1.8.1
+[0m11:25:28.075371 [debug] [MainThread]: checksum: ebc509fb14e151ea268e89b60fd5abf912ed99129f87516462718fa2f14f4838, vars: {}, profile: , target: , version: 1.8.1
+[0m11:25:28.202169 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m11:25:28.202969 [debug] [MainThread]: Partial parsing: updated file: pizzasale_analytics://macros/get_pizza_size.sql
+[0m11:25:28.501339 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.pizzasale_analytics.example
+[0m11:25:28.513243 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'e1715a22-5cb5-4ac5-9e26-cc40d749f2f0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c985a2fc3d0>]}
+[0m11:25:28.597365 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'e1715a22-5cb5-4ac5-9e26-cc40d749f2f0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c9859f79f90>]}
+[0m11:25:28.597946 [info ] [MainThread]: Found 1 model, 1 source, 550 macros
+[0m11:25:28.598461 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e1715a22-5cb5-4ac5-9e26-cc40d749f2f0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c985a2925d0>]}
+[0m11:25:28.599771 [info ] [MainThread]: 
+[0m11:25:28.600505 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m11:25:28.601542 [debug] [ThreadPool]: Acquiring new postgres connection 'list_pizza_sales'
+[0m11:25:28.643249 [debug] [ThreadPool]: Using postgres connection "list_pizza_sales"
+[0m11:25:28.643784 [debug] [ThreadPool]: On list_pizza_sales: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "pizza_analytics", "target_name": "dev", "connection_name": "list_pizza_sales"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m11:25:28.644223 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:25:28.649623 [debug] [ThreadPool]: SQL status: SELECT 4 in 0.0 seconds
+[0m11:25:28.651269 [debug] [ThreadPool]: On list_pizza_sales: Close
+[0m11:25:28.652702 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_pizza_sales, now list_pizza_sales_public)
+[0m11:25:28.659256 [debug] [ThreadPool]: Using postgres connection "list_pizza_sales_public"
+[0m11:25:28.659786 [debug] [ThreadPool]: On list_pizza_sales_public: BEGIN
+[0m11:25:28.660210 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m11:25:28.664543 [debug] [ThreadPool]: SQL status: BEGIN in 0.0 seconds
+[0m11:25:28.665272 [debug] [ThreadPool]: Using postgres connection "list_pizza_sales_public"
+[0m11:25:28.665719 [debug] [ThreadPool]: On list_pizza_sales_public: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "pizza_analytics", "target_name": "dev", "connection_name": "list_pizza_sales_public"} */
+select
+      'pizza_sales' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'pizza_sales' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+    union all
+    select
+      'pizza_sales' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public'
+  
+[0m11:25:28.669268 [debug] [ThreadPool]: SQL status: SELECT 1 in 0.0 seconds
+[0m11:25:28.670790 [debug] [ThreadPool]: On list_pizza_sales_public: ROLLBACK
+[0m11:25:28.671461 [debug] [ThreadPool]: On list_pizza_sales_public: Close
+[0m11:25:28.677703 [debug] [MainThread]: Using postgres connection "master"
+[0m11:25:28.678259 [debug] [MainThread]: On master: BEGIN
+[0m11:25:28.678667 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:25:28.683150 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m11:25:28.683678 [debug] [MainThread]: Using postgres connection "master"
+[0m11:25:28.684216 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "pizza_analytics", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m11:25:28.691124 [debug] [MainThread]: SQL status: SELECT 0 in 0.0 seconds
+[0m11:25:28.692504 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e1715a22-5cb5-4ac5-9e26-cc40d749f2f0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c985a1ce050>]}
+[0m11:25:28.693096 [debug] [MainThread]: On master: ROLLBACK
+[0m11:25:28.693737 [debug] [MainThread]: Using postgres connection "master"
+[0m11:25:28.694193 [debug] [MainThread]: On master: BEGIN
+[0m11:25:28.694985 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m11:25:28.695470 [debug] [MainThread]: On master: COMMIT
+[0m11:25:28.695888 [debug] [MainThread]: Using postgres connection "master"
+[0m11:25:28.696294 [debug] [MainThread]: On master: COMMIT
+[0m11:25:28.696851 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m11:25:28.697334 [debug] [MainThread]: On master: Close
+[0m11:25:28.698018 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m11:25:28.698519 [info ] [MainThread]: 
+[0m11:25:28.701296 [debug] [Thread-1 (]: Began running node model.pizzasale_analytics.stg_pizzasales
+[0m11:25:28.702047 [info ] [Thread-1 (]: 1 of 1 START sql view model public.stg_pizzasales .............................. [RUN]
+[0m11:25:28.702697 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_pizza_sales_public, now model.pizzasale_analytics.stg_pizzasales)
+[0m11:25:28.703215 [debug] [Thread-1 (]: Began compiling node model.pizzasale_analytics.stg_pizzasales
+[0m11:25:28.714821 [debug] [Thread-1 (]: Writing injected SQL for node "model.pizzasale_analytics.stg_pizzasales"
+[0m11:25:28.715741 [debug] [Thread-1 (]: Began executing node model.pizzasale_analytics.stg_pizzasales
+[0m11:25:28.766006 [debug] [Thread-1 (]: Writing runtime sql for node "model.pizzasale_analytics.stg_pizzasales"
+[0m11:25:28.766864 [debug] [Thread-1 (]: Using postgres connection "model.pizzasale_analytics.stg_pizzasales"
+[0m11:25:28.767385 [debug] [Thread-1 (]: On model.pizzasale_analytics.stg_pizzasales: BEGIN
+[0m11:25:28.767870 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m11:25:28.772479 [debug] [Thread-1 (]: SQL status: BEGIN in 0.0 seconds
+[0m11:25:28.773083 [debug] [Thread-1 (]: Using postgres connection "model.pizzasale_analytics.stg_pizzasales"
+[0m11:25:28.773642 [debug] [Thread-1 (]: On model.pizzasale_analytics.stg_pizzasales: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "pizza_analytics", "target_name": "dev", "node_id": "model.pizzasale_analytics.stg_pizzasales"} */
+
+  create view "pizza_sales"."public"."stg_pizzasales__dbt_tmp"
+    
+    
+  as (
+    -- the idea is to have a source of our data
+-- thus i am going to select everything from table in postgres
+-- i will use this as a source for the other models
+
+
+
+-- create a cte for selecting all the data from the table in the db
+
+with stg_pizza_sales as (
+    select
+        -- first i create a surrogate key that is going to uniquely identify my records
+        md5(cast(coalesce(cast(pizza_id as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) as pizzaid,
+
+        -- gonna work on identifiers first, ensuring they are correctly casted
+        -- we have pizza_id, order_id
+
+        
+    
+    cast(pizza_id as integer)
+ as pizza_id,
+        
+    
+    cast(order_id as integer)
+ as order_id,
+
+        -- working on the other attributes
+        pizza_name_id as pizza_name_id,
+        
+    
+    cast(quantity as integer)
+ as quantity,
+        cast(order_date as timestamp) as order_date,
+        cast(order_time as timestamp) as order_time,
+        cast(unit_price as numeric) as unit_price,
+        cast(total_price as numeric) as total_price,
+        pizza_size,
+        case 
+        when 'S' then 'small'
+        when 'XXL' then 'Extra extra Large'
+        when 'XL' then 'Extra large'
+        when 'M' then 'Medium'
+        when 'L' then 'Large'
+        else 'EMPTY'
+    end as pizza_size_description,
+        pizza_category,
+        pizza_ingredients,
+        pizza_name
+    from "pizza_sales"."public"."pizzasales"
+)
+
+select
+    *
+from stg_pizza_sales
+  );
+[0m11:25:28.775503 [debug] [Thread-1 (]: Postgres adapter: Postgres error: invalid input syntax for type boolean: "S"
+LINE 44:         when 'S' then 'small'
+                      ^
+
+[0m11:25:28.776104 [debug] [Thread-1 (]: On model.pizzasale_analytics.stg_pizzasales: ROLLBACK
+[0m11:25:28.776945 [debug] [Thread-1 (]: On model.pizzasale_analytics.stg_pizzasales: Close
+[0m11:25:28.782898 [debug] [Thread-1 (]: Database Error in model stg_pizzasales (models/staging/stg_pizzasales.sql)
+  invalid input syntax for type boolean: "S"
+  LINE 44:         when 'S' then 'small'
+                        ^
+  compiled Code at target/run/pizzasale_analytics/models/staging/stg_pizzasales.sql
+[0m11:25:28.784580 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'e1715a22-5cb5-4ac5-9e26-cc40d749f2f0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c98594d8e10>]}
+[0m11:25:28.785489 [error] [Thread-1 (]: 1 of 1 ERROR creating sql view model public.stg_pizzasales ..................... [[31mERROR[0m in 0.08s]
+[0m11:25:28.786533 [debug] [Thread-1 (]: Finished running node model.pizzasale_analytics.stg_pizzasales
+[0m11:25:28.788081 [debug] [MainThread]: Using postgres connection "master"
+[0m11:25:28.788578 [debug] [MainThread]: On master: BEGIN
+[0m11:25:28.789028 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m11:25:28.793671 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m11:25:28.794643 [debug] [MainThread]: On master: COMMIT
+[0m11:25:28.795500 [debug] [MainThread]: Using postgres connection "master"
+[0m11:25:28.796232 [debug] [MainThread]: On master: COMMIT
+[0m11:25:28.797901 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m11:25:28.798915 [debug] [MainThread]: On master: Close
+[0m11:25:28.800100 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:25:28.801526 [debug] [MainThread]: Connection 'model.pizzasale_analytics.stg_pizzasales' was properly closed.
+[0m11:25:28.802642 [info ] [MainThread]: 
+[0m11:25:28.804531 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 0.20 seconds (0.20s).
+[0m11:25:28.806538 [debug] [MainThread]: Command end result
+[0m11:25:28.856853 [info ] [MainThread]: 
+[0m11:25:28.857560 [info ] [MainThread]: [31mCompleted with 1 error and 0 warnings:[0m
+[0m11:25:28.858135 [info ] [MainThread]: 
+[0m11:25:28.858712 [error] [MainThread]:   Database Error in model stg_pizzasales (models/staging/stg_pizzasales.sql)
+  invalid input syntax for type boolean: "S"
+  LINE 44:         when 'S' then 'small'
+                        ^
+  compiled Code at target/run/pizzasale_analytics/models/staging/stg_pizzasales.sql
+[0m11:25:28.859330 [info ] [MainThread]: 
+[0m11:25:28.860126 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[0m11:25:28.861247 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 1.1207416, "process_user_time": 2.151072, "process_kernel_time": 0.186659, "process_mem_max_rss": "113084", "process_out_blocks": "3384", "command_success": false, "process_in_blocks": "0"}
+[0m11:25:28.861928 [debug] [MainThread]: Command `dbt run` failed at 11:25:28.861806 after 1.12 seconds
+[0m11:25:28.862459 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c985a7d9650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c985e9f5490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c985e9f4550>]}
+[0m11:25:28.862951 [debug] [MainThread]: Flushing usage events
+[0m11:27:00.128918 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78aa7167f4d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78aa7167d510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78aa7167d290>]}
+
+
+============================== 11:27:00.130974 | a73957bb-7df2-4ab8-b3fe-a548e7793937 ==============================
+[0m11:27:00.130974 [info ] [MainThread]: Running with dbt=1.8.1
+[0m11:27:00.131765 [debug] [MainThread]: running dbt with arguments {'log_path': '/home/ahona/Desktop/dataEng/analytics/pizzasale_analytics/logs', 'partial_parse': 'True', 'target_path': 'None', 'quiet': 'False', 'no_print': 'None', 'use_colors': 'True', 'version_check': 'True', 'printer_width': '80', 'warn_error': 'None', 'profiles_dir': '/home/ahona/.dbt', 'indirect_selection': 'eager', 'invocation_command': 'dbt run', 'log_format': 'default', 'introspect': 'True', 'fail_fast': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True', 'log_cache_events': 'False', 'write_json': 'True', 'static_parser': 'True', 'cache_selected_only': 'False', 'use_experimental_parser': 'False', 'debug': 'False'}
+[0m11:27:00.302904 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'a73957bb-7df2-4ab8-b3fe-a548e7793937', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78aa71469790>]}
+[0m11:27:00.355228 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'a73957bb-7df2-4ab8-b3fe-a548e7793937', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78aa73727ad0>]}
+[0m11:27:00.356109 [info ] [MainThread]: Registered adapter: postgres=1.8.1
+[0m11:27:00.382178 [debug] [MainThread]: checksum: ebc509fb14e151ea268e89b60fd5abf912ed99129f87516462718fa2f14f4838, vars: {}, profile: , target: , version: 1.8.1
+[0m11:27:00.528396 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m11:27:00.529177 [debug] [MainThread]: Partial parsing: updated file: pizzasale_analytics://macros/get_pizza_size.sql
+[0m11:27:00.830336 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.pizzasale_analytics.example
+[0m11:27:00.842352 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'a73957bb-7df2-4ab8-b3fe-a548e7793937', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78aa70ffd0d0>]}
+[0m11:27:00.928416 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'a73957bb-7df2-4ab8-b3fe-a548e7793937', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78aa70e69c50>]}
+[0m11:27:00.928999 [info ] [MainThread]: Found 1 model, 1 source, 550 macros
+[0m11:27:00.929462 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'a73957bb-7df2-4ab8-b3fe-a548e7793937', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78aa71086590>]}
+[0m11:27:00.930735 [info ] [MainThread]: 
+[0m11:27:00.931406 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m11:27:00.932600 [debug] [ThreadPool]: Acquiring new postgres connection 'list_pizza_sales'
+[0m11:27:00.973859 [debug] [ThreadPool]: Using postgres connection "list_pizza_sales"
+[0m11:27:00.974389 [debug] [ThreadPool]: On list_pizza_sales: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "pizza_analytics", "target_name": "dev", "connection_name": "list_pizza_sales"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m11:27:00.974806 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:27:00.980141 [debug] [ThreadPool]: SQL status: SELECT 4 in 0.0 seconds
+[0m11:27:00.981640 [debug] [ThreadPool]: On list_pizza_sales: Close
+[0m11:27:00.983138 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_pizza_sales, now list_pizza_sales_public)
+[0m11:27:00.989742 [debug] [ThreadPool]: Using postgres connection "list_pizza_sales_public"
+[0m11:27:00.990297 [debug] [ThreadPool]: On list_pizza_sales_public: BEGIN
+[0m11:27:00.990703 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m11:27:00.995328 [debug] [ThreadPool]: SQL status: BEGIN in 0.0 seconds
+[0m11:27:00.996196 [debug] [ThreadPool]: Using postgres connection "list_pizza_sales_public"
+[0m11:27:00.996665 [debug] [ThreadPool]: On list_pizza_sales_public: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "pizza_analytics", "target_name": "dev", "connection_name": "list_pizza_sales_public"} */
+select
+      'pizza_sales' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'pizza_sales' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+    union all
+    select
+      'pizza_sales' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public'
+  
+[0m11:27:01.000174 [debug] [ThreadPool]: SQL status: SELECT 1 in 0.0 seconds
+[0m11:27:01.001703 [debug] [ThreadPool]: On list_pizza_sales_public: ROLLBACK
+[0m11:27:01.002570 [debug] [ThreadPool]: On list_pizza_sales_public: Close
+[0m11:27:01.007922 [debug] [MainThread]: Using postgres connection "master"
+[0m11:27:01.008467 [debug] [MainThread]: On master: BEGIN
+[0m11:27:01.008879 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:27:01.013331 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m11:27:01.013862 [debug] [MainThread]: Using postgres connection "master"
+[0m11:27:01.014416 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "pizza_analytics", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m11:27:01.021410 [debug] [MainThread]: SQL status: SELECT 0 in 0.0 seconds
+[0m11:27:01.023080 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'a73957bb-7df2-4ab8-b3fe-a548e7793937', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78aa70e69650>]}
+[0m11:27:01.023664 [debug] [MainThread]: On master: ROLLBACK
+[0m11:27:01.024522 [debug] [MainThread]: Using postgres connection "master"
+[0m11:27:01.025220 [debug] [MainThread]: On master: BEGIN
+[0m11:27:01.026088 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m11:27:01.026916 [debug] [MainThread]: On master: COMMIT
+[0m11:27:01.027392 [debug] [MainThread]: Using postgres connection "master"
+[0m11:27:01.027786 [debug] [MainThread]: On master: COMMIT
+[0m11:27:01.028505 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m11:27:01.029202 [debug] [MainThread]: On master: Close
+[0m11:27:01.029827 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m11:27:01.030379 [info ] [MainThread]: 
+[0m11:27:01.033194 [debug] [Thread-1 (]: Began running node model.pizzasale_analytics.stg_pizzasales
+[0m11:27:01.033947 [info ] [Thread-1 (]: 1 of 1 START sql view model public.stg_pizzasales .............................. [RUN]
+[0m11:27:01.034595 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_pizza_sales_public, now model.pizzasale_analytics.stg_pizzasales)
+[0m11:27:01.035240 [debug] [Thread-1 (]: Began compiling node model.pizzasale_analytics.stg_pizzasales
+[0m11:27:01.046627 [debug] [Thread-1 (]: Writing injected SQL for node "model.pizzasale_analytics.stg_pizzasales"
+[0m11:27:01.047570 [debug] [Thread-1 (]: Began executing node model.pizzasale_analytics.stg_pizzasales
+[0m11:27:01.090604 [debug] [Thread-1 (]: Writing runtime sql for node "model.pizzasale_analytics.stg_pizzasales"
+[0m11:27:01.091570 [debug] [Thread-1 (]: Using postgres connection "model.pizzasale_analytics.stg_pizzasales"
+[0m11:27:01.092092 [debug] [Thread-1 (]: On model.pizzasale_analytics.stg_pizzasales: BEGIN
+[0m11:27:01.092540 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m11:27:01.097142 [debug] [Thread-1 (]: SQL status: BEGIN in 0.0 seconds
+[0m11:27:01.097704 [debug] [Thread-1 (]: Using postgres connection "model.pizzasale_analytics.stg_pizzasales"
+[0m11:27:01.098254 [debug] [Thread-1 (]: On model.pizzasale_analytics.stg_pizzasales: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "pizza_analytics", "target_name": "dev", "node_id": "model.pizzasale_analytics.stg_pizzasales"} */
+
+  create view "pizza_sales"."public"."stg_pizzasales__dbt_tmp"
+    
+    
+  as (
+    -- the idea is to have a source of our data
+-- thus i am going to select everything from table in postgres
+-- i will use this as a source for the other models
+
+
+
+-- create a cte for selecting all the data from the table in the db
+
+with stg_pizza_sales as (
+    select
+        -- first i create a surrogate key that is going to uniquely identify my records
+        md5(cast(coalesce(cast(pizza_id as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) as pizzaid,
+
+        -- gonna work on identifiers first, ensuring they are correctly casted
+        -- we have pizza_id, order_id
+
+        
+    
+    cast(pizza_id as integer)
+ as pizza_id,
+        
+    
+    cast(order_id as integer)
+ as order_id,
+
+        -- working on the other attributes
+        pizza_name_id as pizza_name_id,
+        
+    
+    cast(quantity as integer)
+ as quantity,
+        cast(order_date as timestamp) as order_date,
+        cast(order_time as timestamp) as order_time,
+        cast(unit_price as numeric) as unit_price,
+        cast(total_price as numeric) as total_price,
+        pizza_size,
+        case 
+        when  = 'S' then 'small'
+        when  = 'XXL' then 'Extra extra Large'
+        when  = 'XL' then 'Extra large'
+        when  = 'M' then 'Medium'
+        when  = 'L' then 'Large'
+        else 'EMPTY'
+    end as pizza_size_description,
+        pizza_category,
+        pizza_ingredients,
+        pizza_name
+    from "pizza_sales"."public"."pizzasales"
+)
+
+select
+    *
+from stg_pizza_sales
+  );
+[0m11:27:01.099385 [debug] [Thread-1 (]: Postgres adapter: Postgres error: syntax error at or near "="
+LINE 44:         when  = 'S' then 'small'
+                       ^
+
+[0m11:27:01.100340 [debug] [Thread-1 (]: On model.pizzasale_analytics.stg_pizzasales: ROLLBACK
+[0m11:27:01.101447 [debug] [Thread-1 (]: On model.pizzasale_analytics.stg_pizzasales: Close
+[0m11:27:01.105723 [debug] [Thread-1 (]: Database Error in model stg_pizzasales (models/staging/stg_pizzasales.sql)
+  syntax error at or near "="
+  LINE 44:         when  = 'S' then 'small'
+                         ^
+  compiled Code at target/run/pizzasale_analytics/models/staging/stg_pizzasales.sql
+[0m11:27:01.107477 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'a73957bb-7df2-4ab8-b3fe-a548e7793937', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78aa703fd850>]}
+[0m11:27:01.108269 [error] [Thread-1 (]: 1 of 1 ERROR creating sql view model public.stg_pizzasales ..................... [[31mERROR[0m in 0.07s]
+[0m11:27:01.109024 [debug] [Thread-1 (]: Finished running node model.pizzasale_analytics.stg_pizzasales
+[0m11:27:01.110521 [debug] [MainThread]: Using postgres connection "master"
+[0m11:27:01.111026 [debug] [MainThread]: On master: BEGIN
+[0m11:27:01.111437 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m11:27:01.115847 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m11:27:01.116445 [debug] [MainThread]: On master: COMMIT
+[0m11:27:01.116864 [debug] [MainThread]: Using postgres connection "master"
+[0m11:27:01.117286 [debug] [MainThread]: On master: COMMIT
+[0m11:27:01.117877 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m11:27:01.118372 [debug] [MainThread]: On master: Close
+[0m11:27:01.119018 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:27:01.119534 [debug] [MainThread]: Connection 'model.pizzasale_analytics.stg_pizzasales' was properly closed.
+[0m11:27:01.120573 [info ] [MainThread]: 
+[0m11:27:01.121581 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 0.19 seconds (0.19s).
+[0m11:27:01.122929 [debug] [MainThread]: Command end result
+[0m11:27:01.166387 [info ] [MainThread]: 
+[0m11:27:01.167033 [info ] [MainThread]: [31mCompleted with 1 error and 0 warnings:[0m
+[0m11:27:01.167500 [info ] [MainThread]: 
+[0m11:27:01.168048 [error] [MainThread]:   Database Error in model stg_pizzasales (models/staging/stg_pizzasales.sql)
+  syntax error at or near "="
+  LINE 44:         when  = 'S' then 'small'
+                         ^
+  compiled Code at target/run/pizzasale_analytics/models/staging/stg_pizzasales.sql
+[0m11:27:01.168499 [info ] [MainThread]: 
+[0m11:27:01.168965 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[0m11:27:01.170597 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 1.1215211, "process_user_time": 2.187798, "process_kernel_time": 0.172589, "process_mem_max_rss": "113444", "process_in_blocks": "16", "process_out_blocks": "3384", "command_success": false}
+[0m11:27:01.171489 [debug] [MainThread]: Command `dbt run` failed at 11:27:01.171360 after 1.12 seconds
+[0m11:27:01.172017 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78aa7184d690>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78aa7021f690>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78aa716d4610>]}
+[0m11:27:01.172509 [debug] [MainThread]: Flushing usage events
+[0m11:28:47.271133 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a2affb45ad0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a2affb47e10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a2affaf59d0>]}
+
+
+============================== 11:28:47.273241 | 8ccb956a-bbe3-41d7-a28a-b6f573c7814c ==============================
+[0m11:28:47.273241 [info ] [MainThread]: Running with dbt=1.8.1
+[0m11:28:47.273973 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'log_path': '/home/ahona/Desktop/dataEng/analytics/pizzasale_analytics/logs', 'no_print': 'None', 'warn_error': 'None', 'invocation_command': 'dbt run', 'use_experimental_parser': 'False', 'target_path': 'None', 'version_check': 'True', 'profiles_dir': '/home/ahona/.dbt', 'introspect': 'True', 'send_anonymous_usage_stats': 'True', 'log_format': 'default', 'indirect_selection': 'eager', 'write_json': 'True', 'fail_fast': 'False', 'printer_width': '80', 'quiet': 'False', 'log_cache_events': 'False', 'cache_selected_only': 'False', 'debug': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'use_colors': 'True', 'partial_parse': 'True'}
+[0m11:28:47.443752 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '8ccb956a-bbe3-41d7-a28a-b6f573c7814c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a2aff8f0cd0>]}
+[0m11:28:47.495833 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '8ccb956a-bbe3-41d7-a28a-b6f573c7814c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a2b01c27610>]}
+[0m11:28:47.496711 [info ] [MainThread]: Registered adapter: postgres=1.8.1
+[0m11:28:47.519872 [debug] [MainThread]: checksum: ebc509fb14e151ea268e89b60fd5abf912ed99129f87516462718fa2f14f4838, vars: {}, profile: , target: , version: 1.8.1
+[0m11:28:47.644040 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m11:28:47.644721 [debug] [MainThread]: Partial parsing: updated file: pizzasale_analytics://models/staging/stg_pizzasales.sql
+[0m11:28:48.015257 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.pizzasale_analytics.example
+[0m11:28:48.027961 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '8ccb956a-bbe3-41d7-a28a-b6f573c7814c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a2aff54df10>]}
+[0m11:28:48.114155 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '8ccb956a-bbe3-41d7-a28a-b6f573c7814c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a2aff2cfed0>]}
+[0m11:28:48.114713 [info ] [MainThread]: Found 1 model, 1 source, 550 macros
+[0m11:28:48.115178 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '8ccb956a-bbe3-41d7-a28a-b6f573c7814c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a2aff2b2f10>]}
+[0m11:28:48.116451 [info ] [MainThread]: 
+[0m11:28:48.117179 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m11:28:48.118230 [debug] [ThreadPool]: Acquiring new postgres connection 'list_pizza_sales'
+[0m11:28:48.156711 [debug] [ThreadPool]: Using postgres connection "list_pizza_sales"
+[0m11:28:48.157291 [debug] [ThreadPool]: On list_pizza_sales: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "pizza_analytics", "target_name": "dev", "connection_name": "list_pizza_sales"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m11:28:48.157739 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:28:48.164722 [debug] [ThreadPool]: SQL status: SELECT 4 in 0.0 seconds
+[0m11:28:48.166256 [debug] [ThreadPool]: On list_pizza_sales: Close
+[0m11:28:48.167652 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_pizza_sales, now list_pizza_sales_public)
+[0m11:28:48.174650 [debug] [ThreadPool]: Using postgres connection "list_pizza_sales_public"
+[0m11:28:48.175163 [debug] [ThreadPool]: On list_pizza_sales_public: BEGIN
+[0m11:28:48.175559 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m11:28:48.180025 [debug] [ThreadPool]: SQL status: BEGIN in 0.0 seconds
+[0m11:28:48.180547 [debug] [ThreadPool]: Using postgres connection "list_pizza_sales_public"
+[0m11:28:48.181269 [debug] [ThreadPool]: On list_pizza_sales_public: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "pizza_analytics", "target_name": "dev", "connection_name": "list_pizza_sales_public"} */
+select
+      'pizza_sales' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'pizza_sales' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+    union all
+    select
+      'pizza_sales' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public'
+  
+[0m11:28:48.184802 [debug] [ThreadPool]: SQL status: SELECT 1 in 0.0 seconds
+[0m11:28:48.186302 [debug] [ThreadPool]: On list_pizza_sales_public: ROLLBACK
+[0m11:28:48.187045 [debug] [ThreadPool]: On list_pizza_sales_public: Close
+[0m11:28:48.193229 [debug] [MainThread]: Using postgres connection "master"
+[0m11:28:48.193785 [debug] [MainThread]: On master: BEGIN
+[0m11:28:48.194275 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:28:48.198655 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m11:28:48.199217 [debug] [MainThread]: Using postgres connection "master"
+[0m11:28:48.199732 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "pizza_analytics", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m11:28:48.206708 [debug] [MainThread]: SQL status: SELECT 0 in 0.0 seconds
+[0m11:28:48.208071 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '8ccb956a-bbe3-41d7-a28a-b6f573c7814c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a2aff2b42d0>]}
+[0m11:28:48.208663 [debug] [MainThread]: On master: ROLLBACK
+[0m11:28:48.209428 [debug] [MainThread]: Using postgres connection "master"
+[0m11:28:48.209855 [debug] [MainThread]: On master: BEGIN
+[0m11:28:48.210818 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m11:28:48.211286 [debug] [MainThread]: On master: COMMIT
+[0m11:28:48.211695 [debug] [MainThread]: Using postgres connection "master"
+[0m11:28:48.212100 [debug] [MainThread]: On master: COMMIT
+[0m11:28:48.212727 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m11:28:48.213180 [debug] [MainThread]: On master: Close
+[0m11:28:48.213798 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m11:28:48.214294 [info ] [MainThread]: 
+[0m11:28:48.217202 [debug] [Thread-1 (]: Began running node model.pizzasale_analytics.stg_pizzasales
+[0m11:28:48.217914 [info ] [Thread-1 (]: 1 of 1 START sql view model public.stg_pizzasales .............................. [RUN]
+[0m11:28:48.218526 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_pizza_sales_public, now model.pizzasale_analytics.stg_pizzasales)
+[0m11:28:48.219061 [debug] [Thread-1 (]: Began compiling node model.pizzasale_analytics.stg_pizzasales
+[0m11:28:48.230192 [debug] [Thread-1 (]: Writing injected SQL for node "model.pizzasale_analytics.stg_pizzasales"
+[0m11:28:48.231941 [debug] [Thread-1 (]: Began executing node model.pizzasale_analytics.stg_pizzasales
+[0m11:28:48.272945 [debug] [Thread-1 (]: Writing runtime sql for node "model.pizzasale_analytics.stg_pizzasales"
+[0m11:28:48.273887 [debug] [Thread-1 (]: Using postgres connection "model.pizzasale_analytics.stg_pizzasales"
+[0m11:28:48.274423 [debug] [Thread-1 (]: On model.pizzasale_analytics.stg_pizzasales: BEGIN
+[0m11:28:48.274847 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m11:28:48.279391 [debug] [Thread-1 (]: SQL status: BEGIN in 0.0 seconds
+[0m11:28:48.279926 [debug] [Thread-1 (]: Using postgres connection "model.pizzasale_analytics.stg_pizzasales"
+[0m11:28:48.280453 [debug] [Thread-1 (]: On model.pizzasale_analytics.stg_pizzasales: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "pizza_analytics", "target_name": "dev", "node_id": "model.pizzasale_analytics.stg_pizzasales"} */
+
+  create view "pizza_sales"."public"."stg_pizzasales__dbt_tmp"
+    
+    
+  as (
+    -- the idea is to have a source of our data
+-- thus i am going to select everything from table in postgres
+-- i will use this as a source for the other models
+
+
+
+-- create a cte for selecting all the data from the table in the db
+
+with stg_pizza_sales as (
+    select
+        -- first i create a surrogate key that is going to uniquely identify my records
+        md5(cast(coalesce(cast(pizza_id as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) as pizzaid,
+
+        -- gonna work on identifiers first, ensuring they are correctly casted
+        -- we have pizza_id, order_id
+
+        
+    
+    cast(pizza_id as integer)
+ as pizza_id,
+        
+    
+    cast(order_id as integer)
+ as order_id,
+
+        -- working on the other attributes
+        pizza_name_id as pizza_name_id,
+        
+    
+    cast(quantity as integer)
+ as quantity,
+        cast(order_date as timestamp) as order_date,
+        cast(order_time as timestamp) as order_time,
+        cast(unit_price as numeric) as unit_price,
+        cast(total_price as numeric) as total_price,
+        pizza_size,
+        -- case 
+        when  = 'S' then 'small'
+        when  = 'XXL' then 'Extra extra Large'
+        when  = 'XL' then 'Extra large'
+        when  = 'M' then 'Medium'
+        when  = 'L' then 'Large'
+        else 'EMPTY'
+    end as pizza_size_description,
+        pizza_category,
+        pizza_ingredients,
+        pizza_name
+    from "pizza_sales"."public"."pizzasales"
+)
+
+select
+    *
+from stg_pizza_sales
+  );
+[0m11:28:48.281431 [debug] [Thread-1 (]: Postgres adapter: Postgres error: syntax error at or near "when"
+LINE 44:         when  = 'S' then 'small'
+                 ^
+
+[0m11:28:48.281990 [debug] [Thread-1 (]: On model.pizzasale_analytics.stg_pizzasales: ROLLBACK
+[0m11:28:48.282735 [debug] [Thread-1 (]: On model.pizzasale_analytics.stg_pizzasales: Close
+[0m11:28:48.286757 [debug] [Thread-1 (]: Database Error in model stg_pizzasales (models/staging/stg_pizzasales.sql)
+  syntax error at or near "when"
+  LINE 44:         when  = 'S' then 'small'
+                   ^
+  compiled Code at target/run/pizzasale_analytics/models/staging/stg_pizzasales.sql
+[0m11:28:48.288523 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '8ccb956a-bbe3-41d7-a28a-b6f573c7814c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a2aff54f550>]}
+[0m11:28:48.289346 [error] [Thread-1 (]: 1 of 1 ERROR creating sql view model public.stg_pizzasales ..................... [[31mERROR[0m in 0.07s]
+[0m11:28:48.290131 [debug] [Thread-1 (]: Finished running node model.pizzasale_analytics.stg_pizzasales
+[0m11:28:48.291521 [debug] [MainThread]: Using postgres connection "master"
+[0m11:28:48.291966 [debug] [MainThread]: On master: BEGIN
+[0m11:28:48.292386 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m11:28:48.296631 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m11:28:48.297537 [debug] [MainThread]: On master: COMMIT
+[0m11:28:48.298291 [debug] [MainThread]: Using postgres connection "master"
+[0m11:28:48.299028 [debug] [MainThread]: On master: COMMIT
+[0m11:28:48.299636 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m11:28:48.300123 [debug] [MainThread]: On master: Close
+[0m11:28:48.300892 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:28:48.301476 [debug] [MainThread]: Connection 'model.pizzasale_analytics.stg_pizzasales' was properly closed.
+[0m11:28:48.302309 [info ] [MainThread]: 
+[0m11:28:48.304252 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 0.19 seconds (0.19s).
+[0m11:28:48.307648 [debug] [MainThread]: Command end result
+[0m11:28:48.342975 [info ] [MainThread]: 
+[0m11:28:48.343597 [info ] [MainThread]: [31mCompleted with 1 error and 0 warnings:[0m
+[0m11:28:48.344131 [info ] [MainThread]: 
+[0m11:28:48.344646 [error] [MainThread]:   Database Error in model stg_pizzasales (models/staging/stg_pizzasales.sql)
+  syntax error at or near "when"
+  LINE 44:         when  = 'S' then 'small'
+                   ^
+  compiled Code at target/run/pizzasale_analytics/models/staging/stg_pizzasales.sql
+[0m11:28:48.345143 [info ] [MainThread]: 
+[0m11:28:48.345600 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[0m11:28:48.346621 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 1.1571336, "process_user_time": 2.188432, "process_kernel_time": 0.175874, "process_mem_max_rss": "113320", "process_in_blocks": "24", "process_out_blocks": "3384", "command_success": false}
+[0m11:28:48.347239 [debug] [MainThread]: Command `dbt run` failed at 11:28:48.347129 after 1.16 seconds
+[0m11:28:48.347698 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a2affaf5ad0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a2affb47e10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a2affb4ce10>]}
+[0m11:28:48.348147 [debug] [MainThread]: Flushing usage events
+[0m11:30:10.629125 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ac95fb0d8d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ac95fb0d950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ac95fb0d390>]}
+
+
+============================== 11:30:10.631170 | 8970adad-dcc0-49dc-92cc-eb1ee517e8b6 ==============================
+[0m11:30:10.631170 [info ] [MainThread]: Running with dbt=1.8.1
+[0m11:30:10.632033 [debug] [MainThread]: running dbt with arguments {'write_json': 'True', 'target_path': 'None', 'introspect': 'True', 'static_parser': 'True', 'no_print': 'None', 'warn_error': 'None', 'printer_width': '80', 'version_check': 'True', 'indirect_selection': 'eager', 'quiet': 'False', 'use_colors': 'True', 'log_format': 'default', 'profiles_dir': '/home/ahona/.dbt', 'invocation_command': 'dbt run', 'log_cache_events': 'False', 'debug': 'False', 'use_experimental_parser': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'cache_selected_only': 'False', 'log_path': '/home/ahona/Desktop/dataEng/analytics/pizzasale_analytics/logs', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'fail_fast': 'False'}
+[0m11:30:10.799583 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '8970adad-dcc0-49dc-92cc-eb1ee517e8b6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ac95fb5a8d0>]}
+[0m11:30:10.852572 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '8970adad-dcc0-49dc-92cc-eb1ee517e8b6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ac961c2b990>]}
+[0m11:30:10.853503 [info ] [MainThread]: Registered adapter: postgres=1.8.1
+[0m11:30:10.885098 [debug] [MainThread]: checksum: ebc509fb14e151ea268e89b60fd5abf912ed99129f87516462718fa2f14f4838, vars: {}, profile: , target: , version: 1.8.1
+[0m11:30:11.008918 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m11:30:11.009729 [debug] [MainThread]: Partial parsing: updated file: pizzasale_analytics://macros/get_pizza_size.sql
+[0m11:30:11.303420 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.pizzasale_analytics.example
+[0m11:30:11.315512 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '8970adad-dcc0-49dc-92cc-eb1ee517e8b6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ac95f7d9450>]}
+[0m11:30:11.402192 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '8970adad-dcc0-49dc-92cc-eb1ee517e8b6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ac95f30d710>]}
+[0m11:30:11.402833 [info ] [MainThread]: Found 1 model, 1 source, 550 macros
+[0m11:30:11.403462 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '8970adad-dcc0-49dc-92cc-eb1ee517e8b6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ac9618a1410>]}
+[0m11:30:11.404840 [info ] [MainThread]: 
+[0m11:30:11.405605 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m11:30:11.406653 [debug] [ThreadPool]: Acquiring new postgres connection 'list_pizza_sales'
+[0m11:30:11.444441 [debug] [ThreadPool]: Using postgres connection "list_pizza_sales"
+[0m11:30:11.444944 [debug] [ThreadPool]: On list_pizza_sales: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "pizza_analytics", "target_name": "dev", "connection_name": "list_pizza_sales"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m11:30:11.445358 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:30:11.450347 [debug] [ThreadPool]: SQL status: SELECT 4 in 0.0 seconds
+[0m11:30:11.452010 [debug] [ThreadPool]: On list_pizza_sales: Close
+[0m11:30:11.453498 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_pizza_sales, now list_pizza_sales_public)
+[0m11:30:11.460236 [debug] [ThreadPool]: Using postgres connection "list_pizza_sales_public"
+[0m11:30:11.460724 [debug] [ThreadPool]: On list_pizza_sales_public: BEGIN
+[0m11:30:11.461215 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m11:30:11.465293 [debug] [ThreadPool]: SQL status: BEGIN in 0.0 seconds
+[0m11:30:11.465790 [debug] [ThreadPool]: Using postgres connection "list_pizza_sales_public"
+[0m11:30:11.466246 [debug] [ThreadPool]: On list_pizza_sales_public: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "pizza_analytics", "target_name": "dev", "connection_name": "list_pizza_sales_public"} */
+select
+      'pizza_sales' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'pizza_sales' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+    union all
+    select
+      'pizza_sales' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public'
+  
+[0m11:30:11.469686 [debug] [ThreadPool]: SQL status: SELECT 1 in 0.0 seconds
+[0m11:30:11.471156 [debug] [ThreadPool]: On list_pizza_sales_public: ROLLBACK
+[0m11:30:11.471868 [debug] [ThreadPool]: On list_pizza_sales_public: Close
+[0m11:30:11.477924 [debug] [MainThread]: Using postgres connection "master"
+[0m11:30:11.478435 [debug] [MainThread]: On master: BEGIN
+[0m11:30:11.478837 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:30:11.483160 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m11:30:11.483668 [debug] [MainThread]: Using postgres connection "master"
+[0m11:30:11.484184 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "pizza_analytics", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m11:30:11.491343 [debug] [MainThread]: SQL status: SELECT 0 in 0.0 seconds
+[0m11:30:11.492643 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '8970adad-dcc0-49dc-92cc-eb1ee517e8b6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ac95f557910>]}
+[0m11:30:11.493175 [debug] [MainThread]: On master: ROLLBACK
+[0m11:30:11.493969 [debug] [MainThread]: Using postgres connection "master"
+[0m11:30:11.494440 [debug] [MainThread]: On master: BEGIN
+[0m11:30:11.495241 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m11:30:11.495669 [debug] [MainThread]: On master: COMMIT
+[0m11:30:11.496067 [debug] [MainThread]: Using postgres connection "master"
+[0m11:30:11.496447 [debug] [MainThread]: On master: COMMIT
+[0m11:30:11.497018 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m11:30:11.497427 [debug] [MainThread]: On master: Close
+[0m11:30:11.498041 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m11:30:11.498548 [info ] [MainThread]: 
+[0m11:30:11.501373 [debug] [Thread-1 (]: Began running node model.pizzasale_analytics.stg_pizzasales
+[0m11:30:11.502156 [info ] [Thread-1 (]: 1 of 1 START sql view model public.stg_pizzasales .............................. [RUN]
+[0m11:30:11.503023 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_pizza_sales_public, now model.pizzasale_analytics.stg_pizzasales)
+[0m11:30:11.503513 [debug] [Thread-1 (]: Began compiling node model.pizzasale_analytics.stg_pizzasales
+[0m11:30:11.514109 [debug] [Thread-1 (]: Writing injected SQL for node "model.pizzasale_analytics.stg_pizzasales"
+[0m11:30:11.515258 [debug] [Thread-1 (]: Began executing node model.pizzasale_analytics.stg_pizzasales
+[0m11:30:11.556761 [debug] [Thread-1 (]: Writing runtime sql for node "model.pizzasale_analytics.stg_pizzasales"
+[0m11:30:11.557710 [debug] [Thread-1 (]: Using postgres connection "model.pizzasale_analytics.stg_pizzasales"
+[0m11:30:11.558370 [debug] [Thread-1 (]: On model.pizzasale_analytics.stg_pizzasales: BEGIN
+[0m11:30:11.558824 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m11:30:11.563306 [debug] [Thread-1 (]: SQL status: BEGIN in 0.0 seconds
+[0m11:30:11.563965 [debug] [Thread-1 (]: Using postgres connection "model.pizzasale_analytics.stg_pizzasales"
+[0m11:30:11.564636 [debug] [Thread-1 (]: On model.pizzasale_analytics.stg_pizzasales: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "pizza_analytics", "target_name": "dev", "node_id": "model.pizzasale_analytics.stg_pizzasales"} */
+
+  create view "pizza_sales"."public"."stg_pizzasales__dbt_tmp"
+    
+    
+  as (
+    -- the idea is to have a source of our data
+-- thus i am going to select everything from table in postgres
+-- i will use this as a source for the other models
+
+
+
+-- create a cte for selecting all the data from the table in the db
+
+with stg_pizza_sales as (
+    select
+        -- first i create a surrogate key that is going to uniquely identify my records
+        md5(cast(coalesce(cast(pizza_id as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) as pizzaid,
+
+        -- gonna work on identifiers first, ensuring they are correctly casted
+        -- we have pizza_id, order_id
+
+        
+    
+    cast(pizza_id as integer)
+ as pizza_id,
+        
+    
+    cast(order_id as integer)
+ as order_id,
+
+        -- working on the other attributes
+        pizza_name_id as pizza_name_id,
+        
+    
+    cast(quantity as integer)
+ as quantity,
+        cast(order_date as timestamp) as order_date,
+        cast(order_time as timestamp) as order_time,
+        cast(unit_price as numeric) as unit_price,
+        cast(total_price as numeric) as total_price,
+        pizza_size,
+        -- case 
+        when  'S' then 'small'
+        when  'XXL' then 'Extra extra Large'
+        when  'XL' then 'Extra large'
+        when  'M' then 'Medium'
+        when  'L' then 'Large'
+        else 'EMPTY'
+    end as pizza_size_description,
+        pizza_category,
+        pizza_ingredients,
+        pizza_name
+    from "pizza_sales"."public"."pizzasales"
+)
+
+select
+    *
+from stg_pizza_sales
+  );
+[0m11:30:11.565754 [debug] [Thread-1 (]: Postgres adapter: Postgres error: syntax error at or near "when"
+LINE 44:         when  'S' then 'small'
+                 ^
+
+[0m11:30:11.566382 [debug] [Thread-1 (]: On model.pizzasale_analytics.stg_pizzasales: ROLLBACK
+[0m11:30:11.567170 [debug] [Thread-1 (]: On model.pizzasale_analytics.stg_pizzasales: Close
+[0m11:30:11.571066 [debug] [Thread-1 (]: Database Error in model stg_pizzasales (models/staging/stg_pizzasales.sql)
+  syntax error at or near "when"
+  LINE 44:         when  'S' then 'small'
+                   ^
+  compiled Code at target/run/pizzasale_analytics/models/staging/stg_pizzasales.sql
+[0m11:30:11.572547 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '8970adad-dcc0-49dc-92cc-eb1ee517e8b6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ac95e717590>]}
+[0m11:30:11.573305 [error] [Thread-1 (]: 1 of 1 ERROR creating sql view model public.stg_pizzasales ..................... [[31mERROR[0m in 0.07s]
+[0m11:30:11.574041 [debug] [Thread-1 (]: Finished running node model.pizzasale_analytics.stg_pizzasales
+[0m11:30:11.575651 [debug] [MainThread]: Using postgres connection "master"
+[0m11:30:11.576287 [debug] [MainThread]: On master: BEGIN
+[0m11:30:11.576667 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m11:30:11.580723 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m11:30:11.581539 [debug] [MainThread]: On master: COMMIT
+[0m11:30:11.581946 [debug] [MainThread]: Using postgres connection "master"
+[0m11:30:11.582346 [debug] [MainThread]: On master: COMMIT
+[0m11:30:11.582976 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m11:30:11.583414 [debug] [MainThread]: On master: Close
+[0m11:30:11.584035 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:30:11.584741 [debug] [MainThread]: Connection 'model.pizzasale_analytics.stg_pizzasales' was properly closed.
+[0m11:30:11.585525 [info ] [MainThread]: 
+[0m11:30:11.586393 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 0.18 seconds (0.18s).
+[0m11:30:11.588667 [debug] [MainThread]: Command end result
+[0m11:30:11.625747 [info ] [MainThread]: 
+[0m11:30:11.626372 [info ] [MainThread]: [31mCompleted with 1 error and 0 warnings:[0m
+[0m11:30:11.626811 [info ] [MainThread]: 
+[0m11:30:11.627498 [error] [MainThread]:   Database Error in model stg_pizzasales (models/staging/stg_pizzasales.sql)
+  syntax error at or near "when"
+  LINE 44:         when  'S' then 'small'
+                   ^
+  compiled Code at target/run/pizzasale_analytics/models/staging/stg_pizzasales.sql
+[0m11:30:11.627926 [info ] [MainThread]: 
+[0m11:30:11.628386 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[0m11:30:11.629350 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 1.0803504, "process_user_time": 2.136273, "process_kernel_time": 0.170861, "process_mem_max_rss": "113612", "process_out_blocks": "3384", "command_success": false, "process_in_blocks": "0"}
+[0m11:30:11.629972 [debug] [MainThread]: Command `dbt run` failed at 11:30:11.629859 after 1.08 seconds
+[0m11:30:11.630514 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ac95fb03d90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ac95fb64790>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ac95fb647d0>]}
+[0m11:30:11.630978 [debug] [MainThread]: Flushing usage events
+[0m11:34:28.843016 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x719a94929610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x719a94928dd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x719a9492b610>]}
+
+
+============================== 11:34:28.845482 | e9ab54b8-916d-4869-a8df-71ae5ce0612c ==============================
+[0m11:34:28.845482 [info ] [MainThread]: Running with dbt=1.8.1
+[0m11:34:28.846426 [debug] [MainThread]: running dbt with arguments {'warn_error': 'None', 'quiet': 'False', 'debug': 'False', 'use_experimental_parser': 'False', 'cache_selected_only': 'False', 'write_json': 'True', 'indirect_selection': 'eager', 'printer_width': '80', 'introspect': 'True', 'log_format': 'default', 'use_colors': 'True', 'fail_fast': 'False', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'profiles_dir': '/home/ahona/.dbt', 'send_anonymous_usage_stats': 'True', 'partial_parse': 'True', 'log_path': '/home/ahona/Desktop/dataEng/analytics/pizzasale_analytics/logs', 'target_path': 'None', 'invocation_command': 'dbt run', 'static_parser': 'True', 'no_print': 'None', 'log_cache_events': 'False'}
+[0m11:34:29.084824 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'e9ab54b8-916d-4869-a8df-71ae5ce0612c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x719a94929990>]}
+[0m11:34:29.150396 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'e9ab54b8-916d-4869-a8df-71ae5ce0612c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x719a96a33bd0>]}
+[0m11:34:29.151460 [info ] [MainThread]: Registered adapter: postgres=1.8.1
+[0m11:34:29.182572 [debug] [MainThread]: checksum: ebc509fb14e151ea268e89b60fd5abf912ed99129f87516462718fa2f14f4838, vars: {}, profile: , target: , version: 1.8.1
+[0m11:34:29.363739 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m11:34:29.365371 [debug] [MainThread]: Partial parsing: updated file: pizzasale_analytics://macros/get_pizza_size.sql
+[0m11:34:29.686306 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.pizzasale_analytics.example
+[0m11:34:29.698757 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'e9ab54b8-916d-4869-a8df-71ae5ce0612c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x719a9438c7d0>]}
+[0m11:34:29.793458 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'e9ab54b8-916d-4869-a8df-71ae5ce0612c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x719a94380f50>]}
+[0m11:34:29.794205 [info ] [MainThread]: Found 1 model, 1 source, 550 macros
+[0m11:34:29.794662 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e9ab54b8-916d-4869-a8df-71ae5ce0612c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x719a94381bd0>]}
+[0m11:34:29.796011 [info ] [MainThread]: 
+[0m11:34:29.796673 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m11:34:29.797748 [debug] [ThreadPool]: Acquiring new postgres connection 'list_pizza_sales'
+[0m11:34:29.841851 [debug] [ThreadPool]: Using postgres connection "list_pizza_sales"
+[0m11:34:29.842383 [debug] [ThreadPool]: On list_pizza_sales: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "pizza_analytics", "target_name": "dev", "connection_name": "list_pizza_sales"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m11:34:29.842824 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:34:29.848249 [debug] [ThreadPool]: SQL status: SELECT 4 in 0.0 seconds
+[0m11:34:29.849866 [debug] [ThreadPool]: On list_pizza_sales: Close
+[0m11:34:29.851367 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_pizza_sales, now list_pizza_sales_public)
+[0m11:34:29.864712 [debug] [ThreadPool]: Using postgres connection "list_pizza_sales_public"
+[0m11:34:29.865831 [debug] [ThreadPool]: On list_pizza_sales_public: BEGIN
+[0m11:34:29.866843 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m11:34:29.871631 [debug] [ThreadPool]: SQL status: BEGIN in 0.0 seconds
+[0m11:34:29.872328 [debug] [ThreadPool]: Using postgres connection "list_pizza_sales_public"
+[0m11:34:29.872928 [debug] [ThreadPool]: On list_pizza_sales_public: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "pizza_analytics", "target_name": "dev", "connection_name": "list_pizza_sales_public"} */
+select
+      'pizza_sales' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'pizza_sales' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+    union all
+    select
+      'pizza_sales' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public'
+  
+[0m11:34:29.876902 [debug] [ThreadPool]: SQL status: SELECT 1 in 0.0 seconds
+[0m11:34:29.878849 [debug] [ThreadPool]: On list_pizza_sales_public: ROLLBACK
+[0m11:34:29.879826 [debug] [ThreadPool]: On list_pizza_sales_public: Close
+[0m11:34:29.890982 [debug] [MainThread]: Using postgres connection "master"
+[0m11:34:29.892255 [debug] [MainThread]: On master: BEGIN
+[0m11:34:29.893359 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:34:29.903450 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m11:34:29.904627 [debug] [MainThread]: Using postgres connection "master"
+[0m11:34:29.906086 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "pizza_analytics", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m11:34:29.936715 [debug] [MainThread]: SQL status: SELECT 0 in 0.0 seconds
+[0m11:34:29.944559 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e9ab54b8-916d-4869-a8df-71ae5ce0612c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x719a9435e990>]}
+[0m11:34:29.945920 [debug] [MainThread]: On master: ROLLBACK
+[0m11:34:29.950219 [debug] [MainThread]: Using postgres connection "master"
+[0m11:34:29.951333 [debug] [MainThread]: On master: BEGIN
+[0m11:34:29.955680 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m11:34:29.956766 [debug] [MainThread]: On master: COMMIT
+[0m11:34:29.957830 [debug] [MainThread]: Using postgres connection "master"
+[0m11:34:29.962028 [debug] [MainThread]: On master: COMMIT
+[0m11:34:29.963417 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m11:34:29.964510 [debug] [MainThread]: On master: Close
+[0m11:34:29.968535 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m11:34:29.973007 [info ] [MainThread]: 
+[0m11:34:29.982968 [debug] [Thread-1 (]: Began running node model.pizzasale_analytics.stg_pizzasales
+[0m11:34:29.988551 [info ] [Thread-1 (]: 1 of 1 START sql view model public.stg_pizzasales .............................. [RUN]
+[0m11:34:29.990246 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_pizza_sales_public, now model.pizzasale_analytics.stg_pizzasales)
+[0m11:34:29.992669 [debug] [Thread-1 (]: Began compiling node model.pizzasale_analytics.stg_pizzasales
+[0m11:34:30.012764 [debug] [Thread-1 (]: Writing injected SQL for node "model.pizzasale_analytics.stg_pizzasales"
+[0m11:34:30.013587 [debug] [Thread-1 (]: Began executing node model.pizzasale_analytics.stg_pizzasales
+[0m11:34:30.053853 [debug] [Thread-1 (]: Writing runtime sql for node "model.pizzasale_analytics.stg_pizzasales"
+[0m11:34:30.054766 [debug] [Thread-1 (]: Using postgres connection "model.pizzasale_analytics.stg_pizzasales"
+[0m11:34:30.055361 [debug] [Thread-1 (]: On model.pizzasale_analytics.stg_pizzasales: BEGIN
+[0m11:34:30.055822 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m11:34:30.060268 [debug] [Thread-1 (]: SQL status: BEGIN in 0.0 seconds
+[0m11:34:30.061300 [debug] [Thread-1 (]: Using postgres connection "model.pizzasale_analytics.stg_pizzasales"
+[0m11:34:30.062413 [debug] [Thread-1 (]: On model.pizzasale_analytics.stg_pizzasales: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "pizza_analytics", "target_name": "dev", "node_id": "model.pizzasale_analytics.stg_pizzasales"} */
+
+  create view "pizza_sales"."public"."stg_pizzasales__dbt_tmp"
+    
+    
+  as (
+    -- the idea is to have a source of our data
+-- thus i am going to select everything from table in postgres
+-- i will use this as a source for the other models
+
+
+
+-- create a cte for selecting all the data from the table in the db
+
+with stg_pizza_sales as (
+    select
+        -- first i create a surrogate key that is going to uniquely identify my records
+        md5(cast(coalesce(cast(pizza_id as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) as pizzaid,
+
+        -- gonna work on identifiers first, ensuring they are correctly casted
+        -- we have pizza_id, order_id
+
+        
+    
+    cast(pizza_id as integer)
+ as pizza_id,
+        
+    
+    cast(order_id as integer)
+ as order_id,
+
+        -- working on the other attributes
+        pizza_name_id as pizza_name_id,
+        
+    
+    cast(quantity as integer)
+ as quantity,
+        cast(order_date as timestamp) as order_date,
+        cast(order_time as timestamp) as order_time,
+        cast(unit_price as numeric) as unit_price,
+        cast(total_price as numeric) as total_price,
+        pizza_size,
+        -- case 
+        
+            else 'EMPTY'
+        
+    end as pizza_size_description,
+        pizza_category,
+        pizza_ingredients,
+        pizza_name
+    from "pizza_sales"."public"."pizzasales"
+)
+
+select
+    *
+from stg_pizza_sales
+  );
+[0m11:34:30.063613 [debug] [Thread-1 (]: Postgres adapter: Postgres error: syntax error at or near "else"
+LINE 45:             else 'EMPTY'
+                     ^
+
+[0m11:34:30.064348 [debug] [Thread-1 (]: On model.pizzasale_analytics.stg_pizzasales: ROLLBACK
+[0m11:34:30.065455 [debug] [Thread-1 (]: On model.pizzasale_analytics.stg_pizzasales: Close
+[0m11:34:30.072119 [debug] [Thread-1 (]: Database Error in model stg_pizzasales (models/staging/stg_pizzasales.sql)
+  syntax error at or near "else"
+  LINE 45:             else 'EMPTY'
+                       ^
+  compiled Code at target/run/pizzasale_analytics/models/staging/stg_pizzasales.sql
+[0m11:34:30.073979 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'e9ab54b8-916d-4869-a8df-71ae5ce0612c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x719a935214d0>]}
+[0m11:34:30.074874 [error] [Thread-1 (]: 1 of 1 ERROR creating sql view model public.stg_pizzasales ..................... [[31mERROR[0m in 0.08s]
+[0m11:34:30.075688 [debug] [Thread-1 (]: Finished running node model.pizzasale_analytics.stg_pizzasales
+[0m11:34:30.077320 [debug] [MainThread]: Using postgres connection "master"
+[0m11:34:30.077838 [debug] [MainThread]: On master: BEGIN
+[0m11:34:30.078290 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m11:34:30.082705 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m11:34:30.083715 [debug] [MainThread]: On master: COMMIT
+[0m11:34:30.084563 [debug] [MainThread]: Using postgres connection "master"
+[0m11:34:30.085408 [debug] [MainThread]: On master: COMMIT
+[0m11:34:30.086449 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m11:34:30.087317 [debug] [MainThread]: On master: Close
+[0m11:34:30.089553 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:34:30.091754 [debug] [MainThread]: Connection 'model.pizzasale_analytics.stg_pizzasales' was properly closed.
+[0m11:34:30.093105 [info ] [MainThread]: 
+[0m11:34:30.094065 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 0.30 seconds (0.30s).
+[0m11:34:30.094955 [debug] [MainThread]: Command end result
+[0m11:34:30.144188 [info ] [MainThread]: 
+[0m11:34:30.144810 [info ] [MainThread]: [31mCompleted with 1 error and 0 warnings:[0m
+[0m11:34:30.145301 [info ] [MainThread]: 
+[0m11:34:30.146076 [error] [MainThread]:   Database Error in model stg_pizzasales (models/staging/stg_pizzasales.sql)
+  syntax error at or near "else"
+  LINE 45:             else 'EMPTY'
+                       ^
+  compiled Code at target/run/pizzasale_analytics/models/staging/stg_pizzasales.sql
+[0m11:34:30.146556 [info ] [MainThread]: 
+[0m11:34:30.147236 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[0m11:34:30.148914 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 1.3881774, "process_user_time": 2.373798, "process_kernel_time": 0.216885, "process_mem_max_rss": "113384", "process_in_blocks": "53880", "process_out_blocks": "3392", "command_success": false}
+[0m11:34:30.149686 [debug] [MainThread]: Command `dbt run` failed at 11:34:30.149562 after 1.39 seconds
+[0m11:34:30.150211 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x719a9497ce10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x719a949292d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x719a94928fd0>]}
+[0m11:34:30.150698 [debug] [MainThread]: Flushing usage events
+[0m11:35:20.260222 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7715a7d7bd90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7715a8222390>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7715a7d79a50>]}
+
+
+============================== 11:35:20.263736 | 908349ad-aa56-4fb4-9e82-812259eafa5a ==============================
+[0m11:35:20.263736 [info ] [MainThread]: Running with dbt=1.8.1
+[0m11:35:20.265151 [debug] [MainThread]: running dbt with arguments {'send_anonymous_usage_stats': 'True', 'warn_error': 'None', 'debug': 'False', 'invocation_command': 'dbt run', 'write_json': 'True', 'fail_fast': 'False', 'introspect': 'True', 'partial_parse': 'True', 'no_print': 'None', 'quiet': 'False', 'use_experimental_parser': 'False', 'cache_selected_only': 'False', 'profiles_dir': '/home/ahona/.dbt', 'log_path': '/home/ahona/Desktop/dataEng/analytics/pizzasale_analytics/logs', 'use_colors': 'True', 'version_check': 'True', 'static_parser': 'True', 'printer_width': '80', 'log_format': 'default', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'log_cache_events': 'False', 'indirect_selection': 'eager'}
+[0m11:35:20.761727 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '908349ad-aa56-4fb4-9e82-812259eafa5a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7715a7b0ec50>]}
+[0m11:35:20.898263 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '908349ad-aa56-4fb4-9e82-812259eafa5a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7715a9f1ba90>]}
+[0m11:35:20.900194 [info ] [MainThread]: Registered adapter: postgres=1.8.1
+[0m11:35:20.984751 [debug] [MainThread]: checksum: ebc509fb14e151ea268e89b60fd5abf912ed99129f87516462718fa2f14f4838, vars: {}, profile: , target: , version: 1.8.1
+[0m11:35:21.311633 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m11:35:21.312958 [debug] [MainThread]: Partial parsing: updated file: pizzasale_analytics://macros/get_pizza_size.sql
+[0m11:35:22.081275 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.pizzasale_analytics.example
+[0m11:35:22.108219 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '908349ad-aa56-4fb4-9e82-812259eafa5a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7715a77d60d0>]}
+[0m11:35:22.197270 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '908349ad-aa56-4fb4-9e82-812259eafa5a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7715a7588b10>]}
+[0m11:35:22.197843 [info ] [MainThread]: Found 1 model, 1 source, 550 macros
+[0m11:35:22.198356 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '908349ad-aa56-4fb4-9e82-812259eafa5a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7715a77df190>]}
+[0m11:35:22.199661 [info ] [MainThread]: 
+[0m11:35:22.200364 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m11:35:22.201531 [debug] [ThreadPool]: Acquiring new postgres connection 'list_pizza_sales'
+[0m11:35:22.239666 [debug] [ThreadPool]: Using postgres connection "list_pizza_sales"
+[0m11:35:22.240185 [debug] [ThreadPool]: On list_pizza_sales: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "pizza_analytics", "target_name": "dev", "connection_name": "list_pizza_sales"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m11:35:22.240581 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:35:22.245456 [debug] [ThreadPool]: SQL status: SELECT 4 in 0.0 seconds
+[0m11:35:22.246861 [debug] [ThreadPool]: On list_pizza_sales: Close
+[0m11:35:22.248242 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_pizza_sales, now list_pizza_sales_public)
+[0m11:35:22.255534 [debug] [ThreadPool]: Using postgres connection "list_pizza_sales_public"
+[0m11:35:22.256043 [debug] [ThreadPool]: On list_pizza_sales_public: BEGIN
+[0m11:35:22.256437 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m11:35:22.260823 [debug] [ThreadPool]: SQL status: BEGIN in 0.0 seconds
+[0m11:35:22.261399 [debug] [ThreadPool]: Using postgres connection "list_pizza_sales_public"
+[0m11:35:22.261907 [debug] [ThreadPool]: On list_pizza_sales_public: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "pizza_analytics", "target_name": "dev", "connection_name": "list_pizza_sales_public"} */
+select
+      'pizza_sales' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'pizza_sales' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+    union all
+    select
+      'pizza_sales' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public'
+  
+[0m11:35:22.265721 [debug] [ThreadPool]: SQL status: SELECT 1 in 0.0 seconds
+[0m11:35:22.267290 [debug] [ThreadPool]: On list_pizza_sales_public: ROLLBACK
+[0m11:35:22.268046 [debug] [ThreadPool]: On list_pizza_sales_public: Close
+[0m11:35:22.273398 [debug] [MainThread]: Using postgres connection "master"
+[0m11:35:22.273922 [debug] [MainThread]: On master: BEGIN
+[0m11:35:22.274345 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:35:22.279156 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m11:35:22.279696 [debug] [MainThread]: Using postgres connection "master"
+[0m11:35:22.280242 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "pizza_analytics", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m11:35:22.287249 [debug] [MainThread]: SQL status: SELECT 0 in 0.0 seconds
+[0m11:35:22.288590 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '908349ad-aa56-4fb4-9e82-812259eafa5a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7715a7594490>]}
+[0m11:35:22.289149 [debug] [MainThread]: On master: ROLLBACK
+[0m11:35:22.289774 [debug] [MainThread]: Using postgres connection "master"
+[0m11:35:22.290205 [debug] [MainThread]: On master: BEGIN
+[0m11:35:22.291069 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m11:35:22.291517 [debug] [MainThread]: On master: COMMIT
+[0m11:35:22.291923 [debug] [MainThread]: Using postgres connection "master"
+[0m11:35:22.292334 [debug] [MainThread]: On master: COMMIT
+[0m11:35:22.293012 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m11:35:22.293454 [debug] [MainThread]: On master: Close
+[0m11:35:22.294194 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m11:35:22.294698 [info ] [MainThread]: 
+[0m11:35:22.297909 [debug] [Thread-1 (]: Began running node model.pizzasale_analytics.stg_pizzasales
+[0m11:35:22.299266 [info ] [Thread-1 (]: 1 of 1 START sql view model public.stg_pizzasales .............................. [RUN]
+[0m11:35:22.300436 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_pizza_sales_public, now model.pizzasale_analytics.stg_pizzasales)
+[0m11:35:22.301460 [debug] [Thread-1 (]: Began compiling node model.pizzasale_analytics.stg_pizzasales
+[0m11:35:22.325714 [debug] [Thread-1 (]: Writing injected SQL for node "model.pizzasale_analytics.stg_pizzasales"
+[0m11:35:22.327183 [debug] [Thread-1 (]: Began executing node model.pizzasale_analytics.stg_pizzasales
+[0m11:35:22.405261 [debug] [Thread-1 (]: Writing runtime sql for node "model.pizzasale_analytics.stg_pizzasales"
+[0m11:35:22.406803 [debug] [Thread-1 (]: Using postgres connection "model.pizzasale_analytics.stg_pizzasales"
+[0m11:35:22.408001 [debug] [Thread-1 (]: On model.pizzasale_analytics.stg_pizzasales: BEGIN
+[0m11:35:22.409086 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m11:35:22.415938 [debug] [Thread-1 (]: SQL status: BEGIN in 0.0 seconds
+[0m11:35:22.417106 [debug] [Thread-1 (]: Using postgres connection "model.pizzasale_analytics.stg_pizzasales"
+[0m11:35:22.418453 [debug] [Thread-1 (]: On model.pizzasale_analytics.stg_pizzasales: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "pizza_analytics", "target_name": "dev", "node_id": "model.pizzasale_analytics.stg_pizzasales"} */
+
+  create view "pizza_sales"."public"."stg_pizzasales__dbt_tmp"
+    
+    
+  as (
+    -- the idea is to have a source of our data
+-- thus i am going to select everything from table in postgres
+-- i will use this as a source for the other models
+
+
+
+-- create a cte for selecting all the data from the table in the db
+
+with stg_pizza_sales as (
+    select
+        -- first i create a surrogate key that is going to uniquely identify my records
+        md5(cast(coalesce(cast(pizza_id as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) as pizzaid,
+
+        -- gonna work on identifiers first, ensuring they are correctly casted
+        -- we have pizza_id, order_id
+
+        
+    
+    cast(pizza_id as integer)
+ as pizza_id,
+        
+    
+    cast(order_id as integer)
+ as order_id,
+
+        -- working on the other attributes
+        pizza_name_id as pizza_name_id,
+        
+    
+    cast(quantity as integer)
+ as quantity,
+        cast(order_date as timestamp) as order_date,
+        cast(order_time as timestamp) as order_time,
+        cast(unit_price as numeric) as unit_price,
+        cast(total_price as numeric) as total_price,
+        pizza_size,
+        -- 
+    
+        case 
+            
+     as pizza_size_description,
+        pizza_category,
+        pizza_ingredients,
+        pizza_name
+    from "pizza_sales"."public"."pizzasales"
+)
+
+select
+    *
+from stg_pizza_sales
+  );
+[0m11:35:22.420407 [debug] [Thread-1 (]: Postgres adapter: Postgres error: syntax error at or near "as"
+LINE 47:      as pizza_size_description,
+              ^
+
+[0m11:35:22.421475 [debug] [Thread-1 (]: On model.pizzasale_analytics.stg_pizzasales: ROLLBACK
+[0m11:35:22.422978 [debug] [Thread-1 (]: On model.pizzasale_analytics.stg_pizzasales: Close
+[0m11:35:22.433714 [debug] [Thread-1 (]: Database Error in model stg_pizzasales (models/staging/stg_pizzasales.sql)
+  syntax error at or near "as"
+  LINE 47:      as pizza_size_description,
+                ^
+  compiled Code at target/run/pizzasale_analytics/models/staging/stg_pizzasales.sql
+[0m11:35:22.436445 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '908349ad-aa56-4fb4-9e82-812259eafa5a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7715a6ae2d10>]}
+[0m11:35:22.437891 [error] [Thread-1 (]: 1 of 1 ERROR creating sql view model public.stg_pizzasales ..................... [[31mERROR[0m in 0.13s]
+[0m11:35:22.439375 [debug] [Thread-1 (]: Finished running node model.pizzasale_analytics.stg_pizzasales
+[0m11:35:22.446619 [debug] [MainThread]: Using postgres connection "master"
+[0m11:35:22.447475 [debug] [MainThread]: On master: BEGIN
+[0m11:35:22.448227 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m11:35:22.465159 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m11:35:22.466118 [debug] [MainThread]: On master: COMMIT
+[0m11:35:22.466950 [debug] [MainThread]: Using postgres connection "master"
+[0m11:35:22.467762 [debug] [MainThread]: On master: COMMIT
+[0m11:35:22.471911 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m11:35:22.472780 [debug] [MainThread]: On master: Close
+[0m11:35:22.473764 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:35:22.477903 [debug] [MainThread]: Connection 'model.pizzasale_analytics.stg_pizzasales' was properly closed.
+[0m11:35:22.478863 [info ] [MainThread]: 
+[0m11:35:22.482556 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 0.28 seconds (0.28s).
+[0m11:35:22.486245 [debug] [MainThread]: Command end result
+[0m11:35:22.592873 [info ] [MainThread]: 
+[0m11:35:22.594915 [info ] [MainThread]: [31mCompleted with 1 error and 0 warnings:[0m
+[0m11:35:22.595766 [info ] [MainThread]: 
+[0m11:35:22.596729 [error] [MainThread]:   Database Error in model stg_pizzasales (models/staging/stg_pizzasales.sql)
+  syntax error at or near "as"
+  LINE 47:      as pizza_size_description,
+                ^
+  compiled Code at target/run/pizzasale_analytics/models/staging/stg_pizzasales.sql
+[0m11:35:22.597584 [info ] [MainThread]: 
+[0m11:35:22.598401 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[0m11:35:22.599946 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 2.4730957, "process_user_time": 2.908181, "process_kernel_time": 0.183948, "process_mem_max_rss": "113544", "process_out_blocks": "3392", "command_success": false, "process_in_blocks": "0"}
+[0m11:35:22.601046 [debug] [MainThread]: Command `dbt run` failed at 11:35:22.600885 after 2.47 seconds
+[0m11:35:22.601970 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7715a7d7af10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7715a7dd4510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7715a7dd43d0>]}
+[0m11:35:22.602854 [debug] [MainThread]: Flushing usage events
+[0m11:36:37.073396 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72a4bc98bb50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72a4bc98b950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72a4bc989690>]}
+
+
+============================== 11:36:37.075506 | efdad1f3-3b98-4313-99fd-8a4114655c3b ==============================
+[0m11:36:37.075506 [info ] [MainThread]: Running with dbt=1.8.1
+[0m11:36:37.076352 [debug] [MainThread]: running dbt with arguments {'partial_parse': 'True', 'indirect_selection': 'eager', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_format': 'default', 'static_parser': 'True', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'no_print': 'None', 'quiet': 'False', 'debug': 'False', 'target_path': 'None', 'log_path': '/home/ahona/Desktop/dataEng/analytics/pizzasale_analytics/logs', 'write_json': 'True', 'printer_width': '80', 'log_cache_events': 'False', 'profiles_dir': '/home/ahona/.dbt', 'cache_selected_only': 'False', 'send_anonymous_usage_stats': 'True', 'introspect': 'True', 'fail_fast': 'False', 'invocation_command': 'dbt run'}
+[0m11:36:37.244816 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'efdad1f3-3b98-4313-99fd-8a4114655c3b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72a4bc9d5c50>]}
+[0m11:36:37.298263 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'efdad1f3-3b98-4313-99fd-8a4114655c3b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72a4bd015f10>]}
+[0m11:36:37.299176 [info ] [MainThread]: Registered adapter: postgres=1.8.1
+[0m11:36:37.322472 [debug] [MainThread]: checksum: ebc509fb14e151ea268e89b60fd5abf912ed99129f87516462718fa2f14f4838, vars: {}, profile: , target: , version: 1.8.1
+[0m11:36:37.448209 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m11:36:37.448885 [debug] [MainThread]: Partial parsing: updated file: pizzasale_analytics://models/staging/stg_pizzasales.sql
+[0m11:36:37.742482 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.pizzasale_analytics.example
+[0m11:36:37.754691 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'efdad1f3-3b98-4313-99fd-8a4114655c3b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72a4bc6a5e90>]}
+[0m11:36:37.840754 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'efdad1f3-3b98-4313-99fd-8a4114655c3b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72a4bc16fcd0>]}
+[0m11:36:37.841337 [info ] [MainThread]: Found 1 model, 1 source, 550 macros
+[0m11:36:37.841828 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'efdad1f3-3b98-4313-99fd-8a4114655c3b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72a4bc643fd0>]}
+[0m11:36:37.843071 [info ] [MainThread]: 
+[0m11:36:37.843720 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m11:36:37.844715 [debug] [ThreadPool]: Acquiring new postgres connection 'list_pizza_sales'
+[0m11:36:37.897066 [debug] [ThreadPool]: Using postgres connection "list_pizza_sales"
+[0m11:36:37.898102 [debug] [ThreadPool]: On list_pizza_sales: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "pizza_analytics", "target_name": "dev", "connection_name": "list_pizza_sales"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m11:36:37.899287 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:36:37.914549 [debug] [ThreadPool]: SQL status: SELECT 4 in 0.0 seconds
+[0m11:36:37.917525 [debug] [ThreadPool]: On list_pizza_sales: Close
+[0m11:36:37.923705 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_pizza_sales, now list_pizza_sales_public)
+[0m11:36:37.940973 [debug] [ThreadPool]: Using postgres connection "list_pizza_sales_public"
+[0m11:36:37.942198 [debug] [ThreadPool]: On list_pizza_sales_public: BEGIN
+[0m11:36:37.944288 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m11:36:37.951865 [debug] [ThreadPool]: SQL status: BEGIN in 0.0 seconds
+[0m11:36:37.953846 [debug] [ThreadPool]: Using postgres connection "list_pizza_sales_public"
+[0m11:36:37.957503 [debug] [ThreadPool]: On list_pizza_sales_public: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "pizza_analytics", "target_name": "dev", "connection_name": "list_pizza_sales_public"} */
+select
+      'pizza_sales' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'pizza_sales' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+    union all
+    select
+      'pizza_sales' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public'
+  
+[0m11:36:37.964299 [debug] [ThreadPool]: SQL status: SELECT 1 in 0.0 seconds
+[0m11:36:37.972623 [debug] [ThreadPool]: On list_pizza_sales_public: ROLLBACK
+[0m11:36:37.974098 [debug] [ThreadPool]: On list_pizza_sales_public: Close
+[0m11:36:37.998632 [debug] [MainThread]: Using postgres connection "master"
+[0m11:36:37.999785 [debug] [MainThread]: On master: BEGIN
+[0m11:36:38.001218 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:36:38.009053 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m11:36:38.010208 [debug] [MainThread]: Using postgres connection "master"
+[0m11:36:38.011817 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "pizza_analytics", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m11:36:38.020555 [debug] [MainThread]: SQL status: SELECT 0 in 0.0 seconds
+[0m11:36:38.021933 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'efdad1f3-3b98-4313-99fd-8a4114655c3b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72a4bc3d5790>]}
+[0m11:36:38.022517 [debug] [MainThread]: On master: ROLLBACK
+[0m11:36:38.023258 [debug] [MainThread]: Using postgres connection "master"
+[0m11:36:38.023717 [debug] [MainThread]: On master: BEGIN
+[0m11:36:38.024689 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m11:36:38.025184 [debug] [MainThread]: On master: COMMIT
+[0m11:36:38.025611 [debug] [MainThread]: Using postgres connection "master"
+[0m11:36:38.026032 [debug] [MainThread]: On master: COMMIT
+[0m11:36:38.026641 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m11:36:38.027118 [debug] [MainThread]: On master: Close
+[0m11:36:38.028041 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m11:36:38.028641 [info ] [MainThread]: 
+[0m11:36:38.031407 [debug] [Thread-1 (]: Began running node model.pizzasale_analytics.stg_pizzasales
+[0m11:36:38.032427 [info ] [Thread-1 (]: 1 of 1 START sql view model public.stg_pizzasales .............................. [RUN]
+[0m11:36:38.033155 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_pizza_sales_public, now model.pizzasale_analytics.stg_pizzasales)
+[0m11:36:38.033772 [debug] [Thread-1 (]: Began compiling node model.pizzasale_analytics.stg_pizzasales
+[0m11:36:38.045485 [debug] [Thread-1 (]: Writing injected SQL for node "model.pizzasale_analytics.stg_pizzasales"
+[0m11:36:38.047471 [debug] [Thread-1 (]: Began executing node model.pizzasale_analytics.stg_pizzasales
+[0m11:36:38.088433 [debug] [Thread-1 (]: Writing runtime sql for node "model.pizzasale_analytics.stg_pizzasales"
+[0m11:36:38.089227 [debug] [Thread-1 (]: Using postgres connection "model.pizzasale_analytics.stg_pizzasales"
+[0m11:36:38.089704 [debug] [Thread-1 (]: On model.pizzasale_analytics.stg_pizzasales: BEGIN
+[0m11:36:38.090149 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m11:36:38.094490 [debug] [Thread-1 (]: SQL status: BEGIN in 0.0 seconds
+[0m11:36:38.095491 [debug] [Thread-1 (]: Using postgres connection "model.pizzasale_analytics.stg_pizzasales"
+[0m11:36:38.096301 [debug] [Thread-1 (]: On model.pizzasale_analytics.stg_pizzasales: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "pizza_analytics", "target_name": "dev", "node_id": "model.pizzasale_analytics.stg_pizzasales"} */
+
+  create view "pizza_sales"."public"."stg_pizzasales__dbt_tmp"
+    
+    
+  as (
+    -- the idea is to have a source of our data
+-- thus i am going to select everything from table in postgres
+-- i will use this as a source for the other models
+
+
+
+-- create a cte for selecting all the data from the table in the db
+
+with stg_pizza_sales as (
+    select
+        -- first i create a surrogate key that is going to uniquely identify my records
+        md5(cast(coalesce(cast(pizza_id as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) as pizzaid,
+
+        -- gonna work on identifiers first, ensuring they are correctly casted
+        -- we have pizza_id, order_id
+
+        
+    
+    cast(pizza_id as integer)
+ as pizza_id,
+        
+    
+    cast(order_id as integer)
+ as order_id,
+
+        -- working on the other attributes
+        pizza_name_id as pizza_name_id,
+        
+    
+    cast(quantity as integer)
+ as quantity,
+        cast(order_date as timestamp) as order_date,
+        cast(order_time as timestamp) as order_time,
+        cast(unit_price as numeric) as unit_price,
+        cast(total_price as numeric) as total_price,
+        pizza_size,
+        
+    
+        case 
+            
+     as pizza_size_description,  -- Check this line
+        pizza_category,
+        pizza_ingredients,
+        pizza_name
+    from "pizza_sales"."public"."pizzasales"
+)
+
+select
+    *
+from stg_pizza_sales
+  );
+[0m11:36:38.097378 [debug] [Thread-1 (]: Postgres adapter: Postgres error: syntax error at or near "as"
+LINE 47:      as pizza_size_description,  -- Check this line
+              ^
+
+[0m11:36:38.097904 [debug] [Thread-1 (]: On model.pizzasale_analytics.stg_pizzasales: ROLLBACK
+[0m11:36:38.098811 [debug] [Thread-1 (]: On model.pizzasale_analytics.stg_pizzasales: Close
+[0m11:36:38.103243 [debug] [Thread-1 (]: Database Error in model stg_pizzasales (models/staging/stg_pizzasales.sql)
+  syntax error at or near "as"
+  LINE 47:      as pizza_size_description,  -- Check this line
+                ^
+  compiled Code at target/run/pizzasale_analytics/models/staging/stg_pizzasales.sql
+[0m11:36:38.104980 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'efdad1f3-3b98-4313-99fd-8a4114655c3b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72a4bc69f710>]}
+[0m11:36:38.105837 [error] [Thread-1 (]: 1 of 1 ERROR creating sql view model public.stg_pizzasales ..................... [[31mERROR[0m in 0.07s]
+[0m11:36:38.106701 [debug] [Thread-1 (]: Finished running node model.pizzasale_analytics.stg_pizzasales
+[0m11:36:38.108172 [debug] [MainThread]: Using postgres connection "master"
+[0m11:36:38.108649 [debug] [MainThread]: On master: BEGIN
+[0m11:36:38.109047 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m11:36:38.113226 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m11:36:38.113756 [debug] [MainThread]: On master: COMMIT
+[0m11:36:38.114179 [debug] [MainThread]: Using postgres connection "master"
+[0m11:36:38.114584 [debug] [MainThread]: On master: COMMIT
+[0m11:36:38.115149 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m11:36:38.115572 [debug] [MainThread]: On master: Close
+[0m11:36:38.116123 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:36:38.116762 [debug] [MainThread]: Connection 'model.pizzasale_analytics.stg_pizzasales' was properly closed.
+[0m11:36:38.117513 [info ] [MainThread]: 
+[0m11:36:38.118203 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 0.27 seconds (0.27s).
+[0m11:36:38.119890 [debug] [MainThread]: Command end result
+[0m11:36:38.158199 [info ] [MainThread]: 
+[0m11:36:38.158821 [info ] [MainThread]: [31mCompleted with 1 error and 0 warnings:[0m
+[0m11:36:38.159280 [info ] [MainThread]: 
+[0m11:36:38.160005 [error] [MainThread]:   Database Error in model stg_pizzasales (models/staging/stg_pizzasales.sql)
+  syntax error at or near "as"
+  LINE 47:      as pizza_size_description,  -- Check this line
+                ^
+  compiled Code at target/run/pizzasale_analytics/models/staging/stg_pizzasales.sql
+[0m11:36:38.160722 [info ] [MainThread]: 
+[0m11:36:38.161246 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[0m11:36:38.162249 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 1.1695123, "process_user_time": 2.137763, "process_kernel_time": 0.169743, "process_mem_max_rss": "113444", "process_in_blocks": "8", "process_out_blocks": "3392", "command_success": false}
+[0m11:36:38.162888 [debug] [MainThread]: Command `dbt run` failed at 11:36:38.162772 after 1.17 seconds
+[0m11:36:38.163396 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72a4bc988c90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72a4bc989250>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72a4bc9e95d0>]}
+[0m11:36:38.163845 [debug] [MainThread]: Flushing usage events
+[0m11:37:06.123090 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x765e6ea7fdd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x765e703a9610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x765e703a9510>]}
+
+
+============================== 11:37:06.125159 | e09afa6b-3c19-43b8-bfd6-0c4ee1622e6a ==============================
+[0m11:37:06.125159 [info ] [MainThread]: Running with dbt=1.8.1
+[0m11:37:06.125952 [debug] [MainThread]: running dbt with arguments {'target_path': 'None', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'fail_fast': 'False', 'log_format': 'default', 'cache_selected_only': 'False', 'profiles_dir': '/home/ahona/.dbt', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True', 'debug': 'False', 'log_cache_events': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'printer_width': '80', 'write_json': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt run', 'introspect': 'True', 'use_colors': 'True', 'log_path': '/home/ahona/Desktop/dataEng/analytics/pizzasale_analytics/logs', 'version_check': 'True'}
+[0m11:37:06.299031 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'e09afa6b-3c19-43b8-bfd6-0c4ee1622e6a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x765e6e71f9d0>]}
+[0m11:37:06.351896 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'e09afa6b-3c19-43b8-bfd6-0c4ee1622e6a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x765e6f71df10>]}
+[0m11:37:06.352906 [info ] [MainThread]: Registered adapter: postgres=1.8.1
+[0m11:37:06.377152 [debug] [MainThread]: checksum: ebc509fb14e151ea268e89b60fd5abf912ed99129f87516462718fa2f14f4838, vars: {}, profile: , target: , version: 1.8.1
+[0m11:37:06.506436 [debug] [MainThread]: Partial parsing enabled: 1 files deleted, 0 files added, 1 files changed.
+[0m11:37:06.507226 [debug] [MainThread]: Partial parsing: deleted file: pizzasale_analytics://macros/get_pizza_size.sql
+[0m11:37:06.507696 [debug] [MainThread]: Partial parsing: updated file: pizzasale_analytics://models/staging/stg_pizzasales.sql
+[0m11:37:06.812718 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.pizzasale_analytics.example
+[0m11:37:06.825841 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'e09afa6b-3c19-43b8-bfd6-0c4ee1622e6a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x765e6e478250>]}
+[0m11:37:06.912311 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'e09afa6b-3c19-43b8-bfd6-0c4ee1622e6a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x765e6e282c90>]}
+[0m11:37:06.912888 [info ] [MainThread]: Found 1 model, 1 source, 549 macros
+[0m11:37:06.913383 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e09afa6b-3c19-43b8-bfd6-0c4ee1622e6a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x765e6e402b50>]}
+[0m11:37:06.914612 [info ] [MainThread]: 
+[0m11:37:06.915397 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m11:37:06.916530 [debug] [ThreadPool]: Acquiring new postgres connection 'list_pizza_sales'
+[0m11:37:06.955482 [debug] [ThreadPool]: Using postgres connection "list_pizza_sales"
+[0m11:37:06.956004 [debug] [ThreadPool]: On list_pizza_sales: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "pizza_analytics", "target_name": "dev", "connection_name": "list_pizza_sales"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m11:37:06.956425 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:37:06.961549 [debug] [ThreadPool]: SQL status: SELECT 4 in 0.0 seconds
+[0m11:37:06.962980 [debug] [ThreadPool]: On list_pizza_sales: Close
+[0m11:37:06.964391 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_pizza_sales, now list_pizza_sales_public)
+[0m11:37:06.970837 [debug] [ThreadPool]: Using postgres connection "list_pizza_sales_public"
+[0m11:37:06.971354 [debug] [ThreadPool]: On list_pizza_sales_public: BEGIN
+[0m11:37:06.971742 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m11:37:06.976101 [debug] [ThreadPool]: SQL status: BEGIN in 0.0 seconds
+[0m11:37:06.976674 [debug] [ThreadPool]: Using postgres connection "list_pizza_sales_public"
+[0m11:37:06.977291 [debug] [ThreadPool]: On list_pizza_sales_public: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "pizza_analytics", "target_name": "dev", "connection_name": "list_pizza_sales_public"} */
+select
+      'pizza_sales' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'pizza_sales' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+    union all
+    select
+      'pizza_sales' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public'
+  
+[0m11:37:06.980619 [debug] [ThreadPool]: SQL status: SELECT 1 in 0.0 seconds
+[0m11:37:06.982105 [debug] [ThreadPool]: On list_pizza_sales_public: ROLLBACK
+[0m11:37:06.982789 [debug] [ThreadPool]: On list_pizza_sales_public: Close
+[0m11:37:06.988690 [debug] [MainThread]: Using postgres connection "master"
+[0m11:37:06.989317 [debug] [MainThread]: On master: BEGIN
+[0m11:37:06.990095 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:37:06.994428 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m11:37:06.995210 [debug] [MainThread]: Using postgres connection "master"
+[0m11:37:06.995733 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "pizza_analytics", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m11:37:07.002228 [debug] [MainThread]: SQL status: SELECT 0 in 0.0 seconds
+[0m11:37:07.003561 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e09afa6b-3c19-43b8-bfd6-0c4ee1622e6a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x765e6e3a15d0>]}
+[0m11:37:07.004120 [debug] [MainThread]: On master: ROLLBACK
+[0m11:37:07.004771 [debug] [MainThread]: Using postgres connection "master"
+[0m11:37:07.005227 [debug] [MainThread]: On master: BEGIN
+[0m11:37:07.006038 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m11:37:07.006495 [debug] [MainThread]: On master: COMMIT
+[0m11:37:07.006914 [debug] [MainThread]: Using postgres connection "master"
+[0m11:37:07.007327 [debug] [MainThread]: On master: COMMIT
+[0m11:37:07.007933 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m11:37:07.008476 [debug] [MainThread]: On master: Close
+[0m11:37:07.009081 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m11:37:07.009580 [info ] [MainThread]: 
+[0m11:37:07.012711 [debug] [Thread-1 (]: Began running node model.pizzasale_analytics.stg_pizzasales
+[0m11:37:07.013895 [info ] [Thread-1 (]: 1 of 1 START sql view model public.stg_pizzasales .............................. [RUN]
+[0m11:37:07.014827 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_pizza_sales_public, now model.pizzasale_analytics.stg_pizzasales)
+[0m11:37:07.015467 [debug] [Thread-1 (]: Began compiling node model.pizzasale_analytics.stg_pizzasales
+[0m11:37:07.036886 [debug] [Thread-1 (]: Compilation Error in model stg_pizzasales (models/staging/stg_pizzasales.sql)
+  'get_pizza_size_description' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[0m11:37:07.038586 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'e09afa6b-3c19-43b8-bfd6-0c4ee1622e6a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x765e6d7c60d0>]}
+[0m11:37:07.039404 [error] [Thread-1 (]: 1 of 1 ERROR creating sql view model public.stg_pizzasales ..................... [[31mERROR[0m in 0.02s]
+[0m11:37:07.040251 [debug] [Thread-1 (]: Finished running node model.pizzasale_analytics.stg_pizzasales
+[0m11:37:07.041761 [debug] [MainThread]: Using postgres connection "master"
+[0m11:37:07.042265 [debug] [MainThread]: On master: BEGIN
+[0m11:37:07.042683 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m11:37:07.047357 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m11:37:07.047897 [debug] [MainThread]: On master: COMMIT
+[0m11:37:07.048354 [debug] [MainThread]: Using postgres connection "master"
+[0m11:37:07.048769 [debug] [MainThread]: On master: COMMIT
+[0m11:37:07.049374 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m11:37:07.050178 [debug] [MainThread]: On master: Close
+[0m11:37:07.050941 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:37:07.051584 [debug] [MainThread]: Connection 'model.pizzasale_analytics.stg_pizzasales' was properly closed.
+[0m11:37:07.052502 [info ] [MainThread]: 
+[0m11:37:07.053917 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 0.14 seconds (0.14s).
+[0m11:37:07.057213 [debug] [MainThread]: Command end result
+[0m11:37:07.093511 [info ] [MainThread]: 
+[0m11:37:07.094212 [info ] [MainThread]: [31mCompleted with 1 error and 0 warnings:[0m
+[0m11:37:07.094698 [info ] [MainThread]: 
+[0m11:37:07.095294 [error] [MainThread]:   Compilation Error in model stg_pizzasales (models/staging/stg_pizzasales.sql)
+  'get_pizza_size_description' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[0m11:37:07.095763 [info ] [MainThread]: 
+[0m11:37:07.096483 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[0m11:37:07.097496 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 1.0564493, "process_user_time": 2.127656, "process_kernel_time": 0.177804, "process_mem_max_rss": "112752", "process_in_blocks": "472", "process_out_blocks": "3352", "command_success": false}
+[0m11:37:07.098168 [debug] [MainThread]: Command `dbt run` failed at 11:37:07.098051 after 1.06 seconds
+[0m11:37:07.098665 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x765e6ead7f90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x765e6ea7ce50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x765e6ea7c050>]}
+[0m11:37:07.099156 [debug] [MainThread]: Flushing usage events
+[0m11:38:18.496612 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x701020253a10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x701020253f90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7010202539d0>]}
+
+
+============================== 11:38:18.503199 | 812a0257-de0b-4f63-8302-a20d57d40a77 ==============================
+[0m11:38:18.503199 [info ] [MainThread]: Running with dbt=1.8.1
+[0m11:38:18.507283 [debug] [MainThread]: running dbt with arguments {'indirect_selection': 'eager', 'profiles_dir': '/home/ahona/.dbt', 'log_path': '/home/ahona/Desktop/dataEng/analytics/pizzasale_analytics/logs', 'partial_parse': 'True', 'introspect': 'True', 'warn_error': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'use_experimental_parser': 'False', 'write_json': 'True', 'target_path': 'None', 'no_print': 'None', 'version_check': 'True', 'log_cache_events': 'False', 'send_anonymous_usage_stats': 'True', 'invocation_command': 'dbt run --full-refresh', 'static_parser': 'True', 'debug': 'False', 'printer_width': '80', 'quiet': 'False', 'use_colors': 'True', 'log_format': 'default', 'fail_fast': 'False', 'cache_selected_only': 'False'}
+[0m11:38:18.912665 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '812a0257-de0b-4f63-8302-a20d57d40a77', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70102003e810>]}
+[0m11:38:19.004516 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '812a0257-de0b-4f63-8302-a20d57d40a77', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70102232f890>]}
+[0m11:38:19.005929 [info ] [MainThread]: Registered adapter: postgres=1.8.1
+[0m11:38:19.083317 [debug] [MainThread]: checksum: ebc509fb14e151ea268e89b60fd5abf912ed99129f87516462718fa2f14f4838, vars: {}, profile: , target: , version: 1.8.1
+[0m11:38:19.394610 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m11:38:19.395909 [debug] [MainThread]: Partial parsing: updated file: pizzasale_analytics://models/staging/stg_pizzasales.sql
+[0m11:38:19.773019 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.pizzasale_analytics.example
+[0m11:38:19.785620 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '812a0257-de0b-4f63-8302-a20d57d40a77', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70101fe24810>]}
+[0m11:38:19.870073 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '812a0257-de0b-4f63-8302-a20d57d40a77', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70101fa3b250>]}
+[0m11:38:19.870649 [info ] [MainThread]: Found 1 model, 1 source, 549 macros
+[0m11:38:19.871153 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '812a0257-de0b-4f63-8302-a20d57d40a77', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70101fe86250>]}
+[0m11:38:19.872427 [info ] [MainThread]: 
+[0m11:38:19.873371 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m11:38:19.874482 [debug] [ThreadPool]: Acquiring new postgres connection 'list_pizza_sales'
+[0m11:38:19.924424 [debug] [ThreadPool]: Using postgres connection "list_pizza_sales"
+[0m11:38:19.924983 [debug] [ThreadPool]: On list_pizza_sales: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "pizza_analytics", "target_name": "dev", "connection_name": "list_pizza_sales"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m11:38:19.925448 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:38:19.930878 [debug] [ThreadPool]: SQL status: SELECT 4 in 0.0 seconds
+[0m11:38:19.932484 [debug] [ThreadPool]: On list_pizza_sales: Close
+[0m11:38:19.933908 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_pizza_sales, now list_pizza_sales_public)
+[0m11:38:19.941284 [debug] [ThreadPool]: Using postgres connection "list_pizza_sales_public"
+[0m11:38:19.942219 [debug] [ThreadPool]: On list_pizza_sales_public: BEGIN
+[0m11:38:19.943218 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m11:38:19.947731 [debug] [ThreadPool]: SQL status: BEGIN in 0.0 seconds
+[0m11:38:19.948682 [debug] [ThreadPool]: Using postgres connection "list_pizza_sales_public"
+[0m11:38:19.949679 [debug] [ThreadPool]: On list_pizza_sales_public: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "pizza_analytics", "target_name": "dev", "connection_name": "list_pizza_sales_public"} */
+select
+      'pizza_sales' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'pizza_sales' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+    union all
+    select
+      'pizza_sales' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public'
+  
+[0m11:38:19.954018 [debug] [ThreadPool]: SQL status: SELECT 1 in 0.0 seconds
+[0m11:38:19.955578 [debug] [ThreadPool]: On list_pizza_sales_public: ROLLBACK
+[0m11:38:19.956368 [debug] [ThreadPool]: On list_pizza_sales_public: Close
+[0m11:38:19.962967 [debug] [MainThread]: Using postgres connection "master"
+[0m11:38:19.963527 [debug] [MainThread]: On master: BEGIN
+[0m11:38:19.963940 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:38:19.968402 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m11:38:19.969337 [debug] [MainThread]: Using postgres connection "master"
+[0m11:38:19.970427 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "pizza_analytics", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m11:38:19.978238 [debug] [MainThread]: SQL status: SELECT 0 in 0.0 seconds
+[0m11:38:19.979634 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '812a0257-de0b-4f63-8302-a20d57d40a77', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70101fa7ee10>]}
+[0m11:38:19.980268 [debug] [MainThread]: On master: ROLLBACK
+[0m11:38:19.981044 [debug] [MainThread]: Using postgres connection "master"
+[0m11:38:19.981508 [debug] [MainThread]: On master: BEGIN
+[0m11:38:19.982722 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m11:38:19.983658 [debug] [MainThread]: On master: COMMIT
+[0m11:38:19.984286 [debug] [MainThread]: Using postgres connection "master"
+[0m11:38:19.984718 [debug] [MainThread]: On master: COMMIT
+[0m11:38:19.985352 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m11:38:19.985806 [debug] [MainThread]: On master: Close
+[0m11:38:19.986515 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m11:38:19.987160 [info ] [MainThread]: 
+[0m11:38:19.990082 [debug] [Thread-1 (]: Began running node model.pizzasale_analytics.stg_pizzasales
+[0m11:38:19.991220 [info ] [Thread-1 (]: 1 of 1 START sql view model public.stg_pizzasales .............................. [RUN]
+[0m11:38:19.992052 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_pizza_sales_public, now model.pizzasale_analytics.stg_pizzasales)
+[0m11:38:19.993082 [debug] [Thread-1 (]: Began compiling node model.pizzasale_analytics.stg_pizzasales
+[0m11:38:20.006776 [debug] [Thread-1 (]: Writing injected SQL for node "model.pizzasale_analytics.stg_pizzasales"
+[0m11:38:20.008814 [debug] [Thread-1 (]: Began executing node model.pizzasale_analytics.stg_pizzasales
+[0m11:38:20.055152 [debug] [Thread-1 (]: Writing runtime sql for node "model.pizzasale_analytics.stg_pizzasales"
+[0m11:38:20.056161 [debug] [Thread-1 (]: Using postgres connection "model.pizzasale_analytics.stg_pizzasales"
+[0m11:38:20.056710 [debug] [Thread-1 (]: On model.pizzasale_analytics.stg_pizzasales: BEGIN
+[0m11:38:20.057200 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m11:38:20.062055 [debug] [Thread-1 (]: SQL status: BEGIN in 0.0 seconds
+[0m11:38:20.062655 [debug] [Thread-1 (]: Using postgres connection "model.pizzasale_analytics.stg_pizzasales"
+[0m11:38:20.063265 [debug] [Thread-1 (]: On model.pizzasale_analytics.stg_pizzasales: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "pizza_analytics", "target_name": "dev", "node_id": "model.pizzasale_analytics.stg_pizzasales"} */
+
+  create view "pizza_sales"."public"."stg_pizzasales__dbt_tmp"
+    
+    
+  as (
+    -- the idea is to have a source of our data
+-- thus i am going to select everything from table in postgres
+-- i will use this as a source for the other models
+
+
+
+-- create a cte for selecting all the data from the table in the db
+
+with stg_pizza_sales as (
+    select
+        -- first i create a surrogate key that is going to uniquely identify my records
+        md5(cast(coalesce(cast(pizza_id as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) as pizzaid,
+
+        -- gonna work on identifiers first, ensuring they are correctly casted
+        -- we have pizza_id, order_id
+
+        
+    
+    cast(pizza_id as integer)
+ as pizza_id,
+        
+    
+    cast(order_id as integer)
+ as order_id,
+
+        -- working on the other attributes
+        pizza_name_id as pizza_name_id,
+        
+    
+    cast(quantity as integer)
+ as quantity,
+        cast(order_date as timestamp) as order_date,
+        cast(order_time as timestamp) as order_time,
+        cast(unit_price as numeric) as unit_price,
+        cast(total_price as numeric) as total_price,
+        pizza_size,
+        pizza_category,
+        pizza_ingredients,
+        pizza_name
+    from "pizza_sales"."public"."pizzasales"
+)
+
+select
+    *
+from stg_pizza_sales
+  );
+[0m11:38:20.074617 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.0 seconds
+[0m11:38:20.081846 [debug] [Thread-1 (]: Using postgres connection "model.pizzasale_analytics.stg_pizzasales"
+[0m11:38:20.082685 [debug] [Thread-1 (]: On model.pizzasale_analytics.stg_pizzasales: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "pizza_analytics", "target_name": "dev", "node_id": "model.pizzasale_analytics.stg_pizzasales"} */
+alter table "pizza_sales"."public"."stg_pizzasales__dbt_tmp" rename to "stg_pizzasales"
+[0m11:38:20.084145 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.0 seconds
+[0m11:38:20.102335 [debug] [Thread-1 (]: On model.pizzasale_analytics.stg_pizzasales: COMMIT
+[0m11:38:20.102959 [debug] [Thread-1 (]: Using postgres connection "model.pizzasale_analytics.stg_pizzasales"
+[0m11:38:20.103452 [debug] [Thread-1 (]: On model.pizzasale_analytics.stg_pizzasales: COMMIT
+[0m11:38:20.105523 [debug] [Thread-1 (]: SQL status: COMMIT in 0.0 seconds
+[0m11:38:20.113159 [debug] [Thread-1 (]: Applying DROP to: "pizza_sales"."public"."stg_pizzasales__dbt_backup"
+[0m11:38:20.119416 [debug] [Thread-1 (]: Using postgres connection "model.pizzasale_analytics.stg_pizzasales"
+[0m11:38:20.120268 [debug] [Thread-1 (]: On model.pizzasale_analytics.stg_pizzasales: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "pizza_analytics", "target_name": "dev", "node_id": "model.pizzasale_analytics.stg_pizzasales"} */
+drop view if exists "pizza_sales"."public"."stg_pizzasales__dbt_backup" cascade
+[0m11:38:20.121285 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.0 seconds
+[0m11:38:20.123791 [debug] [Thread-1 (]: On model.pizzasale_analytics.stg_pizzasales: Close
+[0m11:38:20.125944 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '812a0257-de0b-4f63-8302-a20d57d40a77', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70101fbec090>]}
+[0m11:38:20.127021 [info ] [Thread-1 (]: 1 of 1 OK created sql view model public.stg_pizzasales ......................... [[32mCREATE VIEW[0m in 0.13s]
+[0m11:38:20.128261 [debug] [Thread-1 (]: Finished running node model.pizzasale_analytics.stg_pizzasales
+[0m11:38:20.129934 [debug] [MainThread]: Using postgres connection "master"
+[0m11:38:20.130448 [debug] [MainThread]: On master: BEGIN
+[0m11:38:20.130876 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m11:38:20.135323 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m11:38:20.136308 [debug] [MainThread]: On master: COMMIT
+[0m11:38:20.137121 [debug] [MainThread]: Using postgres connection "master"
+[0m11:38:20.138088 [debug] [MainThread]: On master: COMMIT
+[0m11:38:20.139494 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m11:38:20.140651 [debug] [MainThread]: On master: Close
+[0m11:38:20.141692 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:38:20.142422 [debug] [MainThread]: Connection 'model.pizzasale_analytics.stg_pizzasales' was properly closed.
+[0m11:38:20.143307 [info ] [MainThread]: 
+[0m11:38:20.144253 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 0.27 seconds (0.27s).
+[0m11:38:20.146459 [debug] [MainThread]: Command end result
+[0m11:38:20.185605 [info ] [MainThread]: 
+[0m11:38:20.186261 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m11:38:20.186723 [info ] [MainThread]: 
+[0m11:38:20.187223 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m11:38:20.188239 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 1.8862386, "process_user_time": 3.160602, "process_kernel_time": 0.212368, "process_mem_max_rss": "113116", "process_in_blocks": "8", "process_out_blocks": "3384"}
+[0m11:38:20.188905 [debug] [MainThread]: Command `dbt run` succeeded at 11:38:20.188784 after 1.89 seconds
+[0m11:38:20.189424 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7010202a8890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7010244a8690>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x701024372cd0>]}
+[0m11:38:20.189911 [debug] [MainThread]: Flushing usage events
+[0m11:40:19.760798 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7be183fdba90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7be18447a490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7be183fdbc90>]}
+
+
+============================== 11:40:19.763039 | 79da83e5-e7f2-43cd-8fec-2cd48d5f482d ==============================
+[0m11:40:19.763039 [info ] [MainThread]: Running with dbt=1.8.1
+[0m11:40:19.763861 [debug] [MainThread]: running dbt with arguments {'log_path': '/home/ahona/Desktop/dataEng/analytics/pizzasale_analytics/logs', 'target_path': 'None', 'profiles_dir': '/home/ahona/.dbt', 'indirect_selection': 'eager', 'quiet': 'False', 'send_anonymous_usage_stats': 'True', 'fail_fast': 'False', 'debug': 'False', 'introspect': 'True', 'partial_parse': 'True', 'warn_error': 'None', 'use_experimental_parser': 'False', 'static_parser': 'True', 'use_colors': 'True', 'cache_selected_only': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'no_print': 'None', 'log_cache_events': 'False', 'invocation_command': 'dbt run', 'version_check': 'True', 'printer_width': '80', 'write_json': 'True', 'log_format': 'default'}
+[0m11:40:19.934320 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '79da83e5-e7f2-43cd-8fec-2cd48d5f482d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7be183dc7490>]}
+[0m11:40:19.987314 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '79da83e5-e7f2-43cd-8fec-2cd48d5f482d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7be186133790>]}
+[0m11:40:19.988209 [info ] [MainThread]: Registered adapter: postgres=1.8.1
+[0m11:40:20.012046 [debug] [MainThread]: checksum: ebc509fb14e151ea268e89b60fd5abf912ed99129f87516462718fa2f14f4838, vars: {}, profile: , target: , version: 1.8.1
+[0m11:40:20.143904 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m11:40:20.144455 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m11:40:20.149122 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.pizzasale_analytics.example
+[0m11:40:20.178167 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '79da83e5-e7f2-43cd-8fec-2cd48d5f482d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7be183cb4ad0>]}
+[0m11:40:20.259373 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '79da83e5-e7f2-43cd-8fec-2cd48d5f482d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7be183b99b90>]}
+[0m11:40:20.259943 [info ] [MainThread]: Found 1 model, 1 source, 549 macros
+[0m11:40:20.260469 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '79da83e5-e7f2-43cd-8fec-2cd48d5f482d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7be183d9a090>]}
+[0m11:40:20.261715 [info ] [MainThread]: 
+[0m11:40:20.262478 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m11:40:20.263557 [debug] [ThreadPool]: Acquiring new postgres connection 'list_pizza_sales'
+[0m11:40:20.305460 [debug] [ThreadPool]: Using postgres connection "list_pizza_sales"
+[0m11:40:20.306011 [debug] [ThreadPool]: On list_pizza_sales: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "pizza_analytics", "target_name": "dev", "connection_name": "list_pizza_sales"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m11:40:20.306422 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:40:20.311612 [debug] [ThreadPool]: SQL status: SELECT 4 in 0.0 seconds
+[0m11:40:20.313280 [debug] [ThreadPool]: On list_pizza_sales: Close
+[0m11:40:20.314665 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_pizza_sales, now list_pizza_sales_public)
+[0m11:40:20.321645 [debug] [ThreadPool]: Using postgres connection "list_pizza_sales_public"
+[0m11:40:20.322162 [debug] [ThreadPool]: On list_pizza_sales_public: BEGIN
+[0m11:40:20.322549 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m11:40:20.326952 [debug] [ThreadPool]: SQL status: BEGIN in 0.0 seconds
+[0m11:40:20.327824 [debug] [ThreadPool]: Using postgres connection "list_pizza_sales_public"
+[0m11:40:20.328356 [debug] [ThreadPool]: On list_pizza_sales_public: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "pizza_analytics", "target_name": "dev", "connection_name": "list_pizza_sales_public"} */
+select
+      'pizza_sales' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'pizza_sales' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+    union all
+    select
+      'pizza_sales' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public'
+  
+[0m11:40:20.331659 [debug] [ThreadPool]: SQL status: SELECT 2 in 0.0 seconds
+[0m11:40:20.333202 [debug] [ThreadPool]: On list_pizza_sales_public: ROLLBACK
+[0m11:40:20.333955 [debug] [ThreadPool]: On list_pizza_sales_public: Close
+[0m11:40:20.340851 [debug] [MainThread]: Using postgres connection "master"
+[0m11:40:20.341353 [debug] [MainThread]: On master: BEGIN
+[0m11:40:20.341745 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:40:20.346145 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m11:40:20.346675 [debug] [MainThread]: Using postgres connection "master"
+[0m11:40:20.347190 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "pizza_analytics", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m11:40:20.354943 [debug] [MainThread]: SQL status: SELECT 1 in 0.0 seconds
+[0m11:40:20.356618 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '79da83e5-e7f2-43cd-8fec-2cd48d5f482d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7be18402ba10>]}
+[0m11:40:20.357185 [debug] [MainThread]: On master: ROLLBACK
+[0m11:40:20.357779 [debug] [MainThread]: Using postgres connection "master"
+[0m11:40:20.358193 [debug] [MainThread]: On master: BEGIN
+[0m11:40:20.358901 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m11:40:20.359363 [debug] [MainThread]: On master: COMMIT
+[0m11:40:20.359747 [debug] [MainThread]: Using postgres connection "master"
+[0m11:40:20.360154 [debug] [MainThread]: On master: COMMIT
+[0m11:40:20.360694 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m11:40:20.361132 [debug] [MainThread]: On master: Close
+[0m11:40:20.361738 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m11:40:20.362241 [info ] [MainThread]: 
+[0m11:40:20.364917 [debug] [Thread-1 (]: Began running node model.pizzasale_analytics.stg_pizzasales
+[0m11:40:20.365645 [info ] [Thread-1 (]: 1 of 1 START sql view model public.stg_pizzasales .............................. [RUN]
+[0m11:40:20.366305 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_pizza_sales_public, now model.pizzasale_analytics.stg_pizzasales)
+[0m11:40:20.366774 [debug] [Thread-1 (]: Began compiling node model.pizzasale_analytics.stg_pizzasales
+[0m11:40:20.397082 [debug] [Thread-1 (]: Writing injected SQL for node "model.pizzasale_analytics.stg_pizzasales"
+[0m11:40:20.398096 [debug] [Thread-1 (]: Began executing node model.pizzasale_analytics.stg_pizzasales
+[0m11:40:20.436225 [debug] [Thread-1 (]: Writing runtime sql for node "model.pizzasale_analytics.stg_pizzasales"
+[0m11:40:20.437349 [debug] [Thread-1 (]: Using postgres connection "model.pizzasale_analytics.stg_pizzasales"
+[0m11:40:20.437832 [debug] [Thread-1 (]: On model.pizzasale_analytics.stg_pizzasales: BEGIN
+[0m11:40:20.438296 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m11:40:20.442434 [debug] [Thread-1 (]: SQL status: BEGIN in 0.0 seconds
+[0m11:40:20.443006 [debug] [Thread-1 (]: Using postgres connection "model.pizzasale_analytics.stg_pizzasales"
+[0m11:40:20.443547 [debug] [Thread-1 (]: On model.pizzasale_analytics.stg_pizzasales: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "pizza_analytics", "target_name": "dev", "node_id": "model.pizzasale_analytics.stg_pizzasales"} */
+
+  create view "pizza_sales"."public"."stg_pizzasales__dbt_tmp"
+    
+    
+  as (
+    -- the idea is to have a source of our data
+-- thus i am going to select everything from table in postgres
+-- i will use this as a source for the other models
+
+
+
+-- create a cte for selecting all the data from the table in the db
+
+with stg_pizza_sales as (
+    select
+        -- first i create a surrogate key that is going to uniquely identify my records
+        md5(cast(coalesce(cast(pizza_id as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) as pizzaid,
+
+        -- gonna work on identifiers first, ensuring they are correctly casted
+        -- we have pizza_id, order_id
+
+        
+    
+    cast(pizza_id as integer)
+ as pizza_id,
+        
+    
+    cast(order_id as integer)
+ as order_id,
+
+        -- working on the other attributes
+        pizza_name_id as pizza_name_id,
+        
+    
+    cast(quantity as integer)
+ as quantity,
+        cast(order_date as timestamp) as order_date,
+        cast(order_time as timestamp) as order_time,
+        cast(unit_price as numeric) as unit_price,
+        cast(total_price as numeric) as total_price,
+        pizza_size,
+        pizza_category,
+        pizza_ingredients,
+        pizza_name
+    from "pizza_sales"."public"."pizzasales"
+)
+
+select
+    *
+from stg_pizza_sales
+  );
+[0m11:40:20.447476 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.0 seconds
+[0m11:40:20.454676 [debug] [Thread-1 (]: Using postgres connection "model.pizzasale_analytics.stg_pizzasales"
+[0m11:40:20.455303 [debug] [Thread-1 (]: On model.pizzasale_analytics.stg_pizzasales: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "pizza_analytics", "target_name": "dev", "node_id": "model.pizzasale_analytics.stg_pizzasales"} */
+alter table "pizza_sales"."public"."stg_pizzasales" rename to "stg_pizzasales__dbt_backup"
+[0m11:40:20.456414 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.0 seconds
+[0m11:40:20.459860 [debug] [Thread-1 (]: Using postgres connection "model.pizzasale_analytics.stg_pizzasales"
+[0m11:40:20.460409 [debug] [Thread-1 (]: On model.pizzasale_analytics.stg_pizzasales: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "pizza_analytics", "target_name": "dev", "node_id": "model.pizzasale_analytics.stg_pizzasales"} */
+alter table "pizza_sales"."public"."stg_pizzasales__dbt_tmp" rename to "stg_pizzasales"
+[0m11:40:20.461604 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.0 seconds
+[0m11:40:20.478494 [debug] [Thread-1 (]: On model.pizzasale_analytics.stg_pizzasales: COMMIT
+[0m11:40:20.479066 [debug] [Thread-1 (]: Using postgres connection "model.pizzasale_analytics.stg_pizzasales"
+[0m11:40:20.479503 [debug] [Thread-1 (]: On model.pizzasale_analytics.stg_pizzasales: COMMIT
+[0m11:40:20.481059 [debug] [Thread-1 (]: SQL status: COMMIT in 0.0 seconds
+[0m11:40:20.487507 [debug] [Thread-1 (]: Applying DROP to: "pizza_sales"."public"."stg_pizzasales__dbt_backup"
+[0m11:40:20.493786 [debug] [Thread-1 (]: Using postgres connection "model.pizzasale_analytics.stg_pizzasales"
+[0m11:40:20.494337 [debug] [Thread-1 (]: On model.pizzasale_analytics.stg_pizzasales: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "pizza_analytics", "target_name": "dev", "node_id": "model.pizzasale_analytics.stg_pizzasales"} */
+drop view if exists "pizza_sales"."public"."stg_pizzasales__dbt_backup" cascade
+[0m11:40:20.497389 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.0 seconds
+[0m11:40:20.499861 [debug] [Thread-1 (]: On model.pizzasale_analytics.stg_pizzasales: Close
+[0m11:40:20.502210 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '79da83e5-e7f2-43cd-8fec-2cd48d5f482d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7be182e1f150>]}
+[0m11:40:20.503623 [info ] [Thread-1 (]: 1 of 1 OK created sql view model public.stg_pizzasales ......................... [[32mCREATE VIEW[0m in 0.13s]
+[0m11:40:20.504648 [debug] [Thread-1 (]: Finished running node model.pizzasale_analytics.stg_pizzasales
+[0m11:40:20.506122 [debug] [MainThread]: Using postgres connection "master"
+[0m11:40:20.506574 [debug] [MainThread]: On master: BEGIN
+[0m11:40:20.506974 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m11:40:20.511278 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m11:40:20.512165 [debug] [MainThread]: On master: COMMIT
+[0m11:40:20.512889 [debug] [MainThread]: Using postgres connection "master"
+[0m11:40:20.513639 [debug] [MainThread]: On master: COMMIT
+[0m11:40:20.514428 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m11:40:20.515195 [debug] [MainThread]: On master: Close
+[0m11:40:20.515914 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:40:20.516834 [debug] [MainThread]: Connection 'model.pizzasale_analytics.stg_pizzasales' was properly closed.
+[0m11:40:20.518855 [info ] [MainThread]: 
+[0m11:40:20.521297 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 0.26 seconds (0.26s).
+[0m11:40:20.522597 [debug] [MainThread]: Command end result
+[0m11:40:20.556767 [info ] [MainThread]: 
+[0m11:40:20.557463 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m11:40:20.557952 [info ] [MainThread]: 
+[0m11:40:20.558475 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m11:40:20.559573 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 0.8790917, "process_user_time": 1.914909, "process_kernel_time": 0.166339, "process_mem_max_rss": "109656", "process_in_blocks": "4888", "process_out_blocks": "2264"}
+[0m11:40:20.560248 [debug] [MainThread]: Command `dbt run` succeeded at 11:40:20.560130 after 0.88 seconds
+[0m11:40:20.560727 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7be1882a8690>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7be18402b250>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7be188172c90>]}
+[0m11:40:20.561215 [debug] [MainThread]: Flushing usage events
